@@ -12,7 +12,9 @@ import { Accuracy } from "./pages/Accuracy";
 import { Factors } from "./pages/Factors";
 import { Explain } from "./pages/Explain";
 import { Demo } from "./pages/Demo";
-import Symbol from "./pages/Symbol";
+import { Symbol } from "./pages/Symbol";
+import { Symbol2 } from "./pages/Symbol2";
+import { Demo2 } from "./pages/Demo2";
 
 function App() {
   
@@ -33,6 +35,9 @@ function App() {
         <Route path="/symbol" element={<Symbol/>}/>
         <Route path="/explain" element={<Explain/>}/>
         <Route path="/demo" element={<Demo/>}/>
+        <Route path="/demo2" element={<Demo2/>}/>
+        <Route path="/symbol2" element={<Symbol2/>}/>
+
 
 
 
