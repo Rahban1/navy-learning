@@ -16,6 +16,7 @@ import { Symbol } from "./pages/Symbol";
 import { Symbol2 } from "./pages/Symbol2";
 import { Demo2 } from "./pages/Demo2";
 import { Explain2 } from "./pages/Explain2";
+import { Bridge } from "./pages/Bridge";
 
 function App() {
   
@@ -39,10 +40,7 @@ function App() {
         <Route path="/demo" element={<Demo/>}/>
         <Route path="/demo2" element={<Demo2/>}/>
         <Route path="/symbol2" element={<Symbol2/>}/>
-
-
-
-
+        <Route path="/bridge" element={<Bridge/>}/>
       </Routes>
     </BrowserRouter>
   )

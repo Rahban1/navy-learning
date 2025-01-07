@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function ListItem({text, navigateTo } : { text : string; navigateTo : string}) {
     const navigate = useNavigate()
   return (
-    <div className="flex my-4 items-center">
+    <div className="flex my-6 tracking-wider items-center">
         
         <motion.button 
                 className="mr-2"
