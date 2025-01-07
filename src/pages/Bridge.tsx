@@ -29,10 +29,10 @@ export function Bridge() {
   },[])
 
   return (
-    <div className='relative'>
+    <div className='relative w-full h-screen'>
         <img src="/bridge.jpeg" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
         <div className="text-white text-3xl font-bold font-pirou z-4 absolute top-12 left-24">Welcome to the bridge. Hover on the equipment/topic you would like to learn about</div>
-        <audio ref={audioRef} src='./bridgeAudio.mp3'/>
+        {/* <audio ref={audioRef} src='./bridgeAudio.mp3'/> */}
         <div 
             className=' w-32 h-20 z-20 absolute left-[35rem] top-[19rem]'
             onMouseEnter={()=>handleMouseEnter('Blind Pilotage')}
