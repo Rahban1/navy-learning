@@ -31,7 +31,7 @@ export function Bridge() {
   return (
     <div className='relative w-full h-screen'>
         <img src="/bridge.jpeg" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
-        <div className="text-white text-3xl font-bold font-pirou z-4 absolute top-12 left-24">Welcome to the bridge. Hover on the equipment/topic you would like to learn about</div>
+        <div className="bg-blue-500 bg-opacity-75 text-white text-3xl font-bold font-pirou z-4 absolute top-12 left-24 p-4 rounded-lg shadow-lg">Welcome to the bridge. Hover on the equipment/topic you would like to learn about</div>
         {/* <audio ref={audioRef} src='./bridgeAudio.mp3'/> */}
         <div 
             className=' w-32 h-20 z-20 absolute left-[35rem] top-[19rem]'
@@ -65,7 +65,7 @@ export function Bridge() {
             />
             <h2 className="text-xl font-bold text-black">{hoveredItem}</h2>
             <motion.p
-              className="z-20 text-white font-bold text-xl absolute left-24 bottom-4 cursor-pointer hover:text-blue-500 transition-colors duration-300"
+              className="z-20 text-white font-bold text-xl absolute left-60 bottom-4 cursor-pointer"
               whileHover={{ scale: 1.1, color: "#3b82f6" }}
               onClick={() => navigate("/list")}
             >
