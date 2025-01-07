@@ -29,7 +29,7 @@ export function Bridge() {
   },[])
 
   return (
-    <div>
+    <div className='relative'>
         <img src="/bridge.jpeg" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
         <div className="text-white text-3xl font-bold font-pirou z-4 absolute top-12 left-24">Welcome to the bridge. Hover on the equipment/topic you would like to learn about</div>
         <audio ref={audioRef} src='./bridgeAudio.mp3'/>
