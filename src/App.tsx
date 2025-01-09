@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { List } from "./pages/List";
 import { Definition } from "./pages/Definition";
-import { Pil } from "./pages/Pil";
 import { Rcr } from "./pages/Rcr";
 import { Wheelover } from "./pages/Wheelover";
 import { Anchoring } from "./pages/Anchoring";
@@ -17,6 +16,8 @@ import { Symbol2 } from "./pages/Symbol2";
 import { Demo2 } from "./pages/Demo2";
 import { Explain2 } from "./pages/Explain2";
 import { Bridge } from "./pages/Bridge";
+import { Radar } from "./pages/Radar";
+import { Map } from "./pages/Map";
 
 function App() {
   
@@ -27,7 +28,6 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/list" element={<List/>}/>
         <Route path="/definition" element={<Definition/>}/>
-        <Route path="/paralellIndexLines" element={<Pil/>}/>
         <Route path="/radarClearingRanges" element={<Rcr/>}/>
         <Route path="/wheelover" element={<Wheelover/>}/>
         <Route path="/anchoring" element={<Anchoring/>}/>
@@ -41,6 +41,8 @@ function App() {
         <Route path="/demo2" element={<Demo2/>}/>
         <Route path="/symbol2" element={<Symbol2/>}/>
         <Route path="/bridge" element={<Bridge/>}/>
+        <Route path="/radar" element={<Radar/>}/>
+        <Route path="/map" element={<Map/>}/>
       </Routes>
     </BrowserRouter>
   )

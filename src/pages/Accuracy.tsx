@@ -3,11 +3,27 @@ import { AnimatedButton } from "../components/AnimatedButton"
 import { BackIcon } from "../icons/BackIcon"
 import { ListItem } from "../components/ListItem"
 import { motion } from "framer-motion"
+import { useEffect, useRef } from "react"
 
 export function Accuracy() {
+    const audioRef = useRef<HTMLAudioElement>(null);
+    useEffect(()=>{
+        const playAudio = async ()=>{
+            try {
+                await audioRef.current?.play()
+            } catch (e) {
+                console.log("error playing audio");
+                
+            }
+        };
+        playAudio();
+    },[])
     const navigate = useNavigate()
     return (
-        <div className="h-screen w-full bg-[#BEEFFF] flex flex-col justify-center items-center">
+        <div className="h-screen font-rock2 w-full bg-[#BEEFFF] flex flex-col justify-center items-center">
+            <audio src="./audio/AccuracyAudio.mp3" ref={audioRef}/>
+            <img src="/images/left-removebg.png" className="absolute top-2 left-2 w-16 h-28" alt="logo" />
+            <img src="/images/right.jpeg" className="absolute top-2 right-2 w-28 h-28" alt="logo2" />
             <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
