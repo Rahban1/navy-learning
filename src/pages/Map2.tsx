@@ -37,20 +37,20 @@ export function Map2() {
                             initial={{ opacity: 0 }} 
                             animate={{ opacity: 1 }} 
                             transition={{ duration: 1.3 }}
-                            className="py-6 px-4"
+                            className="py-2 border-b-2 px-4"
                         >
                             {item}
                         </motion.li>
                     ))}
                 </ol>
             </div>
-            <motion.button 
+            {currentIndex < 4 && <motion.button 
                 onClick={handleNext}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Next</motion.button>
+            >Next</motion.button>}
         </div>
     )
 }
