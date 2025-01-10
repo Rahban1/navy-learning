@@ -9,7 +9,7 @@ export function Map() {
     <div className="relative overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/map.jpeg)] text-2xl">
         <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate('/')}}/>
         <div className="absolute top-[25%] left-[16%]">
-            <MapTopics text="Paralell Index Line"/>
+            <MapTopics text="Paralell Index Line" onclick={()=>{navigate('/map2')}}/>
         </div>
         <div className="absolute top-[34%] left-[25%]">
             <MapTopics text="Cross Index Range"/>

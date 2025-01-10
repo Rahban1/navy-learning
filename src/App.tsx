@@ -18,6 +18,7 @@ import { Explain2 } from "./pages/Explain2";
 import { Bridge } from "./pages/Bridge";
 import { Radar } from "./pages/Radar";
 import { Map } from "./pages/Map";
+import { Map2 } from "./pages/Map2";
 
 function App() {
   
@@ -43,6 +44,7 @@ function App() {
         <Route path="/bridge" element={<Bridge/>}/>
         <Route path="/radar" element={<Radar/>}/>
         <Route path="/map" element={<Map/>}/>
+        <Route path="/map2" element={<Map2/>}/>
       </Routes>
     </BrowserRouter>
   )
