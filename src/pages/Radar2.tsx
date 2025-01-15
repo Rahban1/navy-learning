@@ -14,11 +14,17 @@ export function Radar2() {
         <div className="absolute left-[13%] top-1/2 z-2">
           <Button3D onclick={()=>{navigate('/map2')}}>Parallel Index Line</Button3D>
         </div>
+        <div className="absolute left-[2%] bottom-[8%] z-2">
+                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+        </div>
+        <div className="absolute left-[2%] bottom-[2%] z-2">
+                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+        </div>
         <div className="absolute left-[24%] top-[42%] z-2">
             <Arrow color="text-white" rotation={-27} size={4}/>
         </div>
         <div className="absolute right-[9%] top-[30%] z-2">
-          <Button3D>Clearing Ranges <br /> (NLT and NMT) </Button3D>
+          <Button3D onclick={()=>{navigate('/map-c-ranges')}}>Clearing Ranges <br /> (NLT and NMT) </Button3D>
         </div>
         <div className="absolute right-[20%] top-[27%] z-2">
             <Arrow color="text-white" rotation={188} size={4}/>
@@ -27,7 +33,7 @@ export function Radar2() {
             <Arrow color="text-white" rotation={157} size={4}/>
         </div>
         <div className="absolute right-[13%] top-[60%] z-2">
-          <Button3D>Wheel Over PIL</Button3D>
+          <Button3D onclick={()=>{navigate('/map-wheelover')}}>Wheel Over PIL</Button3D>
         </div>
         <div className="absolute right-[23%] top-[59%] z-2">
             <Arrow color="text-white" rotation={167} size={4}/>

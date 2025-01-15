@@ -22,6 +22,12 @@ import { Map2 } from "./pages/Map2";
 import { Radar2 } from "./pages/Radar2";
 import { Demonstration } from "./pages/Demonstration";
 import { MapCir } from "./pages/MapCir";
+import { Demonstration2 } from "./pages/Demonstration2";
+import { MapCRanges } from "./pages/MapCRanges";
+import { Demonstration3 } from "./pages/Demonstration3";
+import { MapWheelover } from "./pages/MapWheelover";
+import { Demonstration4 } from "./pages/Demonstration4";
+import { Execution } from "./pages/Execution";
 
 function App() {
   
@@ -50,7 +56,13 @@ function App() {
         <Route path="/map" element={<Map/>}/>
         <Route path="/map2" element={<Map2/>}/>
         <Route path="/map-cir" element={<MapCir/>}/>
+        <Route path="/map-wheelover" element={<MapWheelover/>}/>
+        <Route path="/map-c-ranges" element={<MapCRanges/>}/>
         <Route path="/demonstration" element={<Demonstration/>}/>
+        <Route path="/demonstration2" element={<Demonstration2/>}/>
+        <Route path="/demonstration3" element={<Demonstration3/>}/>
+        <Route path="/demonstration4" element={<Demonstration4/>}/>
+        <Route path="/execution" element={<Execution/>}/>
 
       </Routes>
     </BrowserRouter>

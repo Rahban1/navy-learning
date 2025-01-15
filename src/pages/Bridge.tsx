@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Button3D from '../components/Button3d';
-
+import { AnimatedButton } from '../components/AnimatedButton';
+import { BackIcon } from '../icons/BackIcon';
 
 
 export function Bridge() {
@@ -29,13 +30,15 @@ export function Bridge() {
     }
     playAudio();
   },[])
-
   return (
     <div className='relative w-full h-screen overflow-hidden'>
         <img src="/images/bridge.jpeg" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
-        
+        <div className='absolute left-2 top-2'>
+          <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate('/')}}/>
+
+        </div>
         <div className="bg-blue-500 border-white border-2 bg-opacity-75 text-white text-3xl font-bold font-rock2 z-4 absolute top-12 left-[13%] p-4 rounded-lg shadow-lg">Welcome to the bridge. Hover on the equipment/topic you would like to learn about</div>
-        {/* <audio ref={audioRef} src='./bridgeAudio.mp3'/> */}
+        <audio ref={audioRef} src='./bridgeAudio.mp3'/>
         <div 
             className=' w-32 h-16 z-20 absolute left-[38%] top-[34%]'
             onMouseEnter={()=>handleMouseEnter('Blind Pilotage')}

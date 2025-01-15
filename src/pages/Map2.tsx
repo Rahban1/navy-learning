@@ -26,11 +26,17 @@ export function Map2() {
 
     return (
         <div className="relative  h-screen font-rock2 bg-cover bg-center bg-[url(/images/map.jpeg)]">
-            <div className="absolute right-0">
+            <div className="absolute left-0">
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
-                    navigate('/map')
+                    navigate(-1)
                 }}/>
             </div>
+            <div className="absolute left-[2%] bottom-[8%] z-2">
+                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+        </div>
+        <div className="absolute left-[2%] bottom-[2%] z-2">
+                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+        </div>
             <div className="absolute right-[25%] top-[6%] z-2">
             <Button3D>Parallel Index Line</Button3D>
             </div>

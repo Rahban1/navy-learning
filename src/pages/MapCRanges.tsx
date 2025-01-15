@@ -6,14 +6,17 @@ import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 import { Arrow } from "../components/Arrow";
 
-export function MapCir() {
+export function MapCRanges() {
     const navigate = useNavigate()
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const items = [
-        "The Cross Index Range is the ideal range at which the PIL should just touch the radar conspicuous object in order for the ship to be on track.",
-        "It is the perpendicular distance between the chosen track and the Parallel Index Line.",
-        "The EBL and VRM feature of the radar is used to determine as to how much the ship is off track to port or starboard. The same is explained through a demonstration."
+        "Once the LDL is marked on chart, the clearing bearing are utilized for the visual plan and clearing ranges are utilized for the blind plan to keep the ship from venturing into dangerous waters marked on chart by LDL.",
+        "The clearing Ranges are drawn parallel to the PIL on either side of the chosen track beyond which the ship should never go during the course of pilotage.",
+        "The distances on chart are measured perpendicularly from the PIL to the clearing range marked using a pecked line.",
+        "The distance on the side marked as NLT indicates that the perpendicular distance between own ship and ICTT edge should not be less than 1.5c at any instant in order for the ship to remain in safe waters.",
+        "Similarly, the distance marked as NMT indicates that the perpendicular distance between own ship and ICTT edge should not be more than 3.1c at any instant in order for the ship to remain in safe waters.",
+        "Demonstration will explain the usage of Clearing ranges by the Blind Safety Officer on Radar Display"
     ];
 
     const handleNext = () => {
@@ -35,11 +38,14 @@ export function MapCir() {
         <div className="absolute left-[2%] bottom-[2%] z-2">
                 <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
         </div>
-            <div className="absolute right-[49%] top-[51%] z-2">
-            <Button3D>Cross Index Range</Button3D>
-            </div>
-        <div className="absolute right-[52%] top-[38%] z-2">
-            <Arrow rotation={270} size={4}/>
+            <div className="absolute right-[25%] top-[15%] z-2">
+          <Button3D >Clearing Ranges</Button3D>
+        </div>
+        <div className="absolute right-[35%] top-[16%] z-2">
+            <Arrow rotation={160} size={4}/>
+        </div>
+        <div className="absolute right-[30%] top-[20%] z-2">
+            <Arrow rotation={110} size={4}/>
         </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
@@ -54,7 +60,7 @@ export function MapCir() {
                     </motion.li>
                 </ol>
             </div>
-            {currentIndex < 2 && <motion.button 
+            {currentIndex < 5 && <motion.button 
                 onClick={handleNext}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -62,7 +68,7 @@ export function MapCir() {
                 className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
             >Next</motion.button>}
             <motion.button 
-                onClick={()=>{navigate('/demonstration2')}}
+                onClick={()=>{navigate('/demonstration3')}}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 300 }}

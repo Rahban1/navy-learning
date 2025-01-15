@@ -29,7 +29,7 @@ export function Definition() {
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 0.5 }}
             >
-                <AnimatedButton icon={<BackIcon />} onclick={() => { navigate('/list') }} />
+                <AnimatedButton icon={<BackIcon />} onclick={() => { navigate(-1) }} />
             </motion.div>
             <div className="flex justify-center items-center h-screen">
                 <div className="max-w-[80%] min-h-40 p-4 bg-[#00000066] rounded-lg shadow-lg border border-gray-300">

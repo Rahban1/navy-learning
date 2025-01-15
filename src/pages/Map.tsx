@@ -8,7 +8,13 @@ export function Map() {
     const navigate = useNavigate();
   return (
     <div className="relative overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/map.jpeg)] text-2xl">
-        <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate('/')}}/>
+        <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
+        <div className="absolute left-[2%] bottom-[8%] z-2">
+                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+        </div>
+        <div className="absolute left-[2%] bottom-[2%] z-2">
+                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+        </div>
         <div className="absolute left-[16%] top-[25%] z-2">
                 <Button3D onclick={()=>{navigate('/map2')}}>Parallel Index Line</Button3D>
         </div>
@@ -22,13 +28,13 @@ export function Map() {
             <Arrow rotation={-12} size={3}/>
         </div>
         <div className="absolute right-[10%] top-[35%] z-2">
-          <Button3D>Wheel Over CIR</Button3D>
+          <Button3D onclick={()=>{navigate('/map-wheelover')}}>Wheel Over CIR</Button3D>
         </div>
         <div className="absolute right-[20%] top-[37%] z-2">
             <Arrow rotation={140} size={3}/>
         </div>
         <div className="absolute right-[25%] top-[15%] z-2">
-          <Button3D >Clearing Ranges</Button3D>
+          <Button3D onclick={()=>{navigate('/map-c-ranges')}}>Clearing Ranges</Button3D>
         </div>
         <div className="absolute right-[35%] top-[16%] z-2">
             <Arrow rotation={160} size={4}/>

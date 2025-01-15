@@ -5,35 +5,34 @@ import { useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 
-export  function Demonstration() {
+export function Demonstration3() {
     const [currentIndex,setCurrentIndex] = useState(0);
     const [step, setStep] = useState(0);
     const video1ref = useRef<HTMLVideoElement>(null);
-    const video2ref = useRef<HTMLVideoElement>(null);
     const items = [
-        "In this demonstration we will see how the PIL gives an indication of the ship being on track or off track on the radar display.",
-        "As you saw on the chart display earlier, that the PIL at ICTT berth edge is at a distance of 2.7c which is the CIR (Port).",
-        "The ship begins to move along the track and the blind safety officer uses the PIL feature of the radar to set a PIL parallel to course 078 ½ at a distance of 2.7c (0.27Nm).",
-        "The ICTT edge touches the PIL when the ship proceeds on track on course 078 ½."]
+       "Two additional PIL are placed on the radar display at 1.5c and 3.1c as NLT and NMT respectively."
+    ]
     const items2 = [
-        "As the ship begins to go off track to port the ICTT berth comes closer to the ship on the radar display and crosses the PIL set at 2.7c thus giving an indication to the blind safety officer that the ship is off track to port.",
-        "Similarly, as the ship starts to regain track the ICTT berth starts moving back to the original position which is touching the PIL.",
-        "Subsequently as the ship moves starboard of track, ICTT berth edge moves farther away from the PIL and thus gives an indication that the ship is off track to starboard."]
+        "As the ship begins to move to port, the PIL at 1.5c starts to close the ICTT edge.",
+        "When the ICTT edge is about to touch the PIL at 1.5c, it indicates that the ship is on LDL and any further to port will enter into dangerous waters.",
+        "As the ship alters to starboard, the PIL at 2.7c begins to close the ICTT edge thereby indicating the ship regaining track. This is followed by ship beginning to go off track to starboard upto the LDL which is indicated by the PIL at 3.1c touching the ICTT edge."
+        ]
     const navigate = useNavigate()
     const handleNext = ()=>{
         setCurrentIndex(currentIndex + 1)
-        if(currentIndex == 3){
+        if(currentIndex == 0){
             video1ref.current?.play();
-            video2ref.current?.play();
             const timer1 = setTimeout(()=>{
                 setStep(1);
-            },12000)
+            },2000)
             const timer2 = setTimeout(()=>{
                 setStep(2);
-            },44000)
+            },35000)
             const timer3 = setTimeout(()=>{
                 setStep(3);
-            },73000)
+            },54000)
+            
+            
 
             return(()=>{
                 clearTimeout(timer1)
@@ -48,16 +47,11 @@ export  function Demonstration() {
     <div className="relative h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)]">
         
         <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
-        <div className="w-1/2 absolute left-[5%] top-[5%] flex flex-col gap-4 z-10">
+        <div className="w-1/2 absolute left-[5%] top-[30%] flex flex-col gap-4 z-10">
         <video ref={video1ref} className="w-6/7 max-w-3xl h-auto" >
-            <source src="./video/map1.mp4" type="video/mp4" />
+            <source src="./video/clearingRanges.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
-        <video ref={video2ref} className="w-6/7 max-w-3xl h-auto" >
-            <source src="./video/radar1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-        
 
         </div>
         <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
@@ -106,17 +100,17 @@ export  function Demonstration() {
                         {items2[2]}
                     </motion.p>
             </div>}
-            {currentIndex < 4 && <motion.button 
+            {currentIndex < 1 && <motion.button 
                 onClick={handleNext}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
             >Next</motion.button>}
-            <div className="absolute right-[2%] bottom-[8%] z-2">
+            <div className="absolute left-[2%] bottom-[8%] z-2">
                 <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
         </div>
-        <div className="absolute right-[2%] bottom-[2%] z-2">
+        <div className="absolute left-[2%] bottom-[2%] z-2">
                 <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
         </div>
             
@@ -124,57 +118,3 @@ export  function Demonstration() {
     </div>
   )
 }
-
-// import React, { useState, useEffect, useRef } from "react";
-
-// const VideoTextApp = () => {
-//   const [step, setStep] = useState(0); // To control what is displayed
-//   const video1Ref = useRef(null);
-//   const video2Ref = useRef(null);
-
-//   useEffect(() => {
-//     // Show the initial text
-//     const timer1 = setTimeout(() => setStep(1), 3000); // After 3 seconds, show more text
-
-//     // Start videos
-//     const timer2 = setTimeout(() => {
-//       setStep(2); // Move to video section
-//       video1Ref.current.play();
-//       video2Ref.current.play();
-//     }, 6000); // After 6 seconds, start videos
-
-//     // Show additional text at 13 seconds into the video
-//     const timer3 = setTimeout(() => setStep(3), 13000); // After 13 seconds, show final text
-
-//     // Clean up the timers
-//     return () => {
-//       clearTimeout(timer1);
-//       clearTimeout(timer2);
-//       clearTimeout(timer3);
-//     };
-//   }, []);
-
-//   return (
-//     <div>
-//       {/* Text sections */}
-//       {step === 0 && <p>Initial text appearing first...</p>}
-//       {step === 1 && <p>Additional text appears after initial text...</p>}
-//       {step >= 2 && (
-//         <div>
-//           {/* Videos */}
-//           <video
-//             ref={video1Ref}
-//             src="video1.mp4"
-//             width="400"
-//             muted
-//             style={{ marginRight: "10px" }}
-//           />
-//           <video ref={video2Ref} src="video2.mp4" width="400" muted />
-//         </div>
-//       )}
-//       {step === 3 && <p>Text displayed from 13s to 44s...</p>}
-//     </div>
-//   );
-// };
-
-// export default VideoTextApp;
