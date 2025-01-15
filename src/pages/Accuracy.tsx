@@ -20,10 +20,10 @@ export function Accuracy() {
     },[])
     const navigate = useNavigate()
     return (
-        <div className="h-screen font-rock2 w-full bg-[#BEEFFF] flex flex-col justify-center items-center">
+        <div className="h-screen font-rock2 w-full flex flex-col justify-center items-center">
             <audio src="./audio/AccuracyAudio.mp3" ref={audioRef}/>
-            <img src="/images/left-removebg.png" className="absolute top-2 left-2 w-16 h-28" alt="logo" />
-            <img src="/images/right.jpeg" className="absolute top-2 right-2 w-28 h-28" alt="logo2" />
+            <img src="/images/rad.jpeg" className="-z-10 absolute inset-0 w-full h-full object-cover" alt="Background" />
+
             <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
@@ -32,11 +32,11 @@ export function Accuracy() {
                 <AnimatedButton icon={<BackIcon />} onclick={() => { navigate('/howisthisdone') }}  />
             </motion.div>
             <div className="flex justify-center items-center h-screen">
-                <div className="max-w-[80%] min-h-40 p-4 bg-white rounded-lg shadow-lg">
+                <div className="max-w-[80%] min-h-40 p-4 text-white rounded-lg shadow-lg border border-gray-300 bg-[#00000066]">
                     <div className="flex flex-col items-center">
-                        <div className="font-bold text-3xl text-center my-4 text-blue-600">ACCURACY</div>
+                        <div className="font-bold text-3xl text-center my-4 ">ACCURACY</div>
                         <div className="text-xl text-center mb-4 text-[#007BFF]">The accuracy of Blind Pilotage is such that the ship can be taken to an open anchorage and anchored to within <span className="font-semibold">50 yards</span> of the desired position.</div>
-                        <div className="text-xl text-center text-[#0056b3]">However, the degree of risks involved must be carefully assessed before embarking on a passage relying totally on Blind Pilotage in conditions of poor visibility.</div>
+                        <div className="text-xl text-center ">However, the degree of risks involved must be carefully assessed before embarking on a passage relying totally on Blind Pilotage in conditions of poor visibility.</div>
                         <ListItem text="Factors that need to be borne in mind" navigateTo="factors" />
                     </div>
                 </div>

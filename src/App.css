@@ -6,3 +6,7 @@
     font-family: "Pirou";
     src: url(/fonts/pirou/Pirou-Regular.otf);
 }
+
+* {
+    box-sizing: border-box;
+}

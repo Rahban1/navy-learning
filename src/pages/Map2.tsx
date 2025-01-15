@@ -29,19 +29,17 @@ export function Map2() {
                     navigate('/map')
                 }}/>
             </div>
-            <div className="w-1/3 z-4 bg-[#00000066] text-2xl font-rock2 font-bold h-full text-white">
+            <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
-                    {items.slice(0, currentIndex + 1).map((item, index) => (
-                        <motion.li 
-                            key={index} 
-                            initial={{ opacity: 0 }} 
-                            animate={{ opacity: 1 }} 
-                            transition={{ duration: 1.3 }}
-                            className="py-2 border-b-2 px-4"
-                        >
-                            {item}
-                        </motion.li>
-                    ))}
+                    <motion.li 
+                        key={currentIndex} 
+                        initial={{ opacity: 0 }} 
+                        animate={{ opacity: 1 }} 
+                        transition={{ duration: 1.3 }}
+                        className="py-2  pl-6"
+                    >
+                        {items[currentIndex]}
+                    </motion.li>
                 </ol>
             </div>
             {currentIndex < 4 && <motion.button 
@@ -51,6 +49,13 @@ export function Map2() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
             >Next</motion.button>}
+            <motion.button 
+                onClick={()=>{navigate('/demonstration')}}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="absolute left-[70%] bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
+            >Move to the Demo</motion.button>
         </div>
     )
 }
