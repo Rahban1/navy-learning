@@ -6,16 +6,14 @@ import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 import { Arrow } from "../components/Arrow";
 
-export function Map2() {
+export function MapCir() {
     const navigate = useNavigate()
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const items = [
-        "A Parallel Index Line (PIL) is drawn parallel to the chosen track touching the edge of the radar conspicuous object.",
-        "It should be noted that radar conspicuous object should not include drying heights as the same may or may not paint on radar depending on tidal conditions.",
-        "The perpendicular distance is then measured between the chosen track and the PIL which is known as Cross Index Range (CIR).",
-        "This CIR is used to determine whether the ship on track or off track and by how much using the PIL feature on Radar Display. The same is explained in the demo ahead.",
-        "A blind plan may or may not have a PIL each on either side of the track or may have multiple PILs depending on the availability of Radar Conspicuous Objects."
+        "The Cross Index Range is the ideal range at which the PIL should just touch the radar conspicuous object in order for the ship to be on track.",
+        "It is the perpendicular distance between the chosen track and the Parallel Index Line.",
+        "The EBL and VRM feature of the radar is used to determine as to how much the ship is off track to port or starboard. The same is explained through a demonstration."
     ];
 
     const handleNext = () => {
@@ -31,11 +29,11 @@ export function Map2() {
                     navigate('/map')
                 }}/>
             </div>
-            <div className="absolute right-[25%] top-[6%] z-2">
-            <Button3D>Parallel Index Line</Button3D>
+            <div className="absolute right-[49%] top-[51%] z-2">
+            <Button3D>Cross Index Range</Button3D>
             </div>
-        <div className="absolute right-[35%] top-[8%] z-2">
-            <Arrow rotation={150} size={4}/>
+        <div className="absolute right-[52%] top-[38%] z-2">
+            <Arrow rotation={270} size={4}/>
         </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
@@ -50,7 +48,7 @@ export function Map2() {
                     </motion.li>
                 </ol>
             </div>
-            {currentIndex < 4 && <motion.button 
+            {currentIndex < 2 && <motion.button 
                 onClick={handleNext}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

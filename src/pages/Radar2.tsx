@@ -5,7 +5,7 @@ import Button3D from "../components/Button3d";
 import { Arrow } from "../components/Arrow";
 
 
-export default function Radar2() {
+export function Radar2() {
     const navigate = useNavigate()
   return (
     <div className="h-screen bg-black w-full max-h-full relative bg-center bg-[url(/images/radar-final.jpeg)] font-rock2 bg-100 bg-no-repeat">     

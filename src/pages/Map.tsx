@@ -16,7 +16,7 @@ export function Map() {
             <Arrow rotation={-12} size={3}/>
         </div>
         <div className="absolute left-[24%] top-[35%] z-2">
-          <Button3D>Cross Index Range</Button3D>
+          <Button3D onclick={()=>{navigate('/map-cir')}}>Cross Index Range</Button3D>
         </div>
         <div className="absolute left-[36%] top-[31%] z-2">
             <Arrow rotation={-12} size={3}/>
@@ -28,7 +28,7 @@ export function Map() {
             <Arrow rotation={140} size={3}/>
         </div>
         <div className="absolute right-[25%] top-[15%] z-2">
-          <Button3D>Clearing Ranges</Button3D>
+          <Button3D >Clearing Ranges</Button3D>
         </div>
         <div className="absolute right-[35%] top-[16%] z-2">
             <Arrow rotation={160} size={4}/>

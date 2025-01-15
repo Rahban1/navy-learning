@@ -15,9 +15,9 @@ export  function Demonstration() {
         "The ship begins to move along the track and the blind safety officer uses the PIL feature of the radar to set a PIL parallel to course 078 ½ at a distance of 2.7c (0.27Nm).",
         "The ICTT edge touches the PIL when the ship proceeds on track on course 078 ½."]
     const items2 = [
-        "(00:13 till 00:44) As the ship begins to go off track to port the ICTT berth comes closer to the ship on the radar display and crosses the PIL set at 2.7c thus giving an indication to the blind safety officer that the ship is off track to port.",
-        "(00:45 till 01:13)) Similarly, as the ship starts to regain track the ICTT berth starts moving back to the original position which is touching the PIL.",
-        "(01:14 till end)Subsequently as the ship moves starboard of track, ICTT berth edge moves farther away from the PIL and thus gives an indication that the ship is off track to starboard."]
+        "As the ship begins to go off track to port the ICTT berth comes closer to the ship on the radar display and crosses the PIL set at 2.7c thus giving an indication to the blind safety officer that the ship is off track to port.",
+        "Similarly, as the ship starts to regain track the ICTT berth starts moving back to the original position which is touching the PIL.",
+        "Subsequently as the ship moves starboard of track, ICTT berth edge moves farther away from the PIL and thus gives an indication that the ship is off track to starboard."]
     const navigate = useNavigate()
     const handleNext = ()=>{
         setCurrentIndex(currentIndex + 1)
@@ -25,17 +25,21 @@ export  function Demonstration() {
             video1ref.current?.play();
             video2ref.current?.play();
             const timer1 = setTimeout(()=>{
-                setStep(step + 1);
+                setStep(1);
             },12000)
             const timer2 = setTimeout(()=>{
-                setStep(step + 1);
+                setStep(2);
             },44000)
             const timer3 = setTimeout(()=>{
-                setStep(step + 1);
+                setStep(3);
             },73000)
-            clearTimeout(timer1)
-            clearTimeout(timer2);
-            clearTimeout(timer3);
+
+            return(()=>{
+                clearTimeout(timer1)
+                clearTimeout(timer2);
+                clearTimeout(timer3);
+            })
+            
         }
     }
   return (
@@ -100,13 +104,13 @@ export  function Demonstration() {
                         {items2[2]}
                     </motion.p>
             </div>}
-            {currentIndex < 5 && <motion.button 
+            {currentIndex < 4 && <motion.button 
                 onClick={handleNext}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Next {currentIndex}</motion.button>}
+            >Next</motion.button>}
             
             
     </div>
