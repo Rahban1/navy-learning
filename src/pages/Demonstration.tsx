@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { AnimatedButton } from "../components/AnimatedButton";
 import { BackIcon } from "../icons/BackIcon";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 
@@ -10,6 +10,10 @@ export  function Demonstration() {
     const [step, setStep] = useState(0);
     const video1ref = useRef<HTMLVideoElement>(null);
     const video2ref = useRef<HTMLVideoElement>(null);
+    const ref = useRef<HTMLAudioElement>(null);
+    const ref2 = useRef<HTMLAudioElement>(null);
+    const ref3 = useRef<HTMLAudioElement>(null);
+
     const items = [
         "In this demonstration we will see how the PIL gives an indication of the ship being on track or off track on the radar display.",
         "As you saw on the chart display earlier, that the PIL at ICTT berth edge is at a distance of 2.7c which is the CIR (Port).",
@@ -43,6 +47,29 @@ export  function Demonstration() {
             
         }
     }
+    const audio = ["d1.wav","d2.wav","d3.wav","d4.wav"]
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+    useEffect(()=>{
+        if(audioRef.current) {
+            audioRef.current.src  =`audio/demo1/${audio[currentIndex]}`;
+            audioRef.current.play()
+        }
+    },[currentIndex]);
+    useEffect(()=>{
+        if(step === 1 && ref.current) {
+            ref.current.src = `audio/demo1/d5.wav`;
+            ref.current.play()
+        }
+        if(step === 2 && ref2.current) {
+            ref2.current.src = `audio/demo1/d6.wav`;
+            ref2.current.play()
+        }
+        if(step === 3 && ref3.current) {
+            ref3.current.src = `audio/demo1/d7.wav`;
+            ref3.current.play()
+        }
+    },[step])
+
   return (
 
     <div className="relative h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)]">
@@ -73,7 +100,7 @@ export  function Demonstration() {
                     </motion.li>
                 </ol>
             </div>
-            {step === 1 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+            {step === 1  && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
                         key={currentIndex} 
                         initial={{ opacity: 0 }} 
@@ -83,6 +110,7 @@ export  function Demonstration() {
                     >
                         {items2[0]}
                     </motion.p>
+                    <audio ref={ref}></audio>
             </div>}
             {step === 2 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -94,6 +122,8 @@ export  function Demonstration() {
                     >
                         {items2[1]}
                     </motion.p>
+                    <audio ref={ref2}></audio>
+
             </div>}
             {step === 3 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -105,76 +135,22 @@ export  function Demonstration() {
                     >
                         {items2[2]}
                     </motion.p>
+                    <audio ref={ref3}></audio>
+
             </div>}
-            {currentIndex < 4 && <motion.button 
-                onClick={handleNext}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Next</motion.button>}
+            {currentIndex < 4 && <div className="absolute right-32 bottom-12 z-2">
+            <Button3D onclick={handleNext}>Next</Button3D>
+            </div>}
             <div className="absolute right-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
         </div>
         <div className="absolute right-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
         </div>
+        <audio ref={audioRef}></audio>
             
             
     </div>
   )
 }
 
-// import React, { useState, useEffect, useRef } from "react";
-
-// const VideoTextApp = () => {
-//   const [step, setStep] = useState(0); // To control what is displayed
-//   const video1Ref = useRef(null);
-//   const video2Ref = useRef(null);
-
-//   useEffect(() => {
-//     // Show the initial text
-//     const timer1 = setTimeout(() => setStep(1), 3000); // After 3 seconds, show more text
-
-//     // Start videos
-//     const timer2 = setTimeout(() => {
-//       setStep(2); // Move to video section
-//       video1Ref.current.play();
-//       video2Ref.current.play();
-//     }, 6000); // After 6 seconds, start videos
-
-//     // Show additional text at 13 seconds into the video
-//     const timer3 = setTimeout(() => setStep(3), 13000); // After 13 seconds, show final text
-
-//     // Clean up the timers
-//     return () => {
-//       clearTimeout(timer1);
-//       clearTimeout(timer2);
-//       clearTimeout(timer3);
-//     };
-//   }, []);
-
-//   return (
-//     <div>
-//       {/* Text sections */}
-//       {step === 0 && <p>Initial text appearing first...</p>}
-//       {step === 1 && <p>Additional text appears after initial text...</p>}
-//       {step >= 2 && (
-//         <div>
-//           {/* Videos */}
-//           <video
-//             ref={video1Ref}
-//             src="video1.mp4"
-//             width="400"
-//             muted
-//             style={{ marginRight: "10px" }}
-//           />
-//           <video ref={video2Ref} src="video2.mp4" width="400" muted />
-//         </div>
-//       )}
-//       {step === 3 && <p>Text displayed from 13s to 44s...</p>}
-//     </div>
-//   );
-// };
-
-// export default VideoTextApp;

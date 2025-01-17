@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { AnimatedButton } from "../components/AnimatedButton";
 import { BackIcon } from "../icons/BackIcon";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 
@@ -9,9 +9,37 @@ export function Demonstration3() {
     const [currentIndex,setCurrentIndex] = useState(0);
     const [step, setStep] = useState(0);
     const video1ref = useRef<HTMLVideoElement>(null);
+
     const items = [
        "Two additional PIL are placed on the radar display at 1.5c and 3.1c as NLT and NMT respectively."
     ]
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+    const ref1 = useRef<HTMLAudioElement | null>(null);
+    const ref2 = useRef<HTMLAudioElement | null>(null);
+    const ref3 = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(()=>{
+        if(audioRef.current) {
+            audioRef.current.src = `audio/demo3/d1.wav`;
+            if(currentIndex == 0){
+                audioRef.current.play()
+            }
+        }
+    },[currentIndex])
+    useEffect(()=>{
+        if(step === 1 && ref1.current) {
+            ref1.current.src = "audio/demo3/d2.wav";
+            ref1.current.play();
+        } 
+        if(step === 2 && ref2.current) {
+            ref2.current.src = "audio/demo3/d3.wav";
+            ref2.current.play();
+        } 
+        if(step === 3 && ref3.current) {
+            ref3.current.src = "audio/demo3/d4.wav";
+            ref3.current.play();
+        } 
+    },[step])
     const items2 = [
         "As the ship begins to move to port, the PIL at 1.5c starts to close the ICTT edge.",
         "When the ICTT edge is about to touch the PIL at 1.5c, it indicates that the ship is on LDL and any further to port will enter into dangerous waters.",
@@ -52,7 +80,7 @@ export function Demonstration3() {
             <source src="./video/clearingRanges.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
-
+        <audio ref={audioRef}></audio>
         </div>
         <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                 <ol>
@@ -77,6 +105,7 @@ export function Demonstration3() {
                     >
                         {items2[0]}
                     </motion.p>
+                    <audio ref={ref1}></audio>
             </div>}
             {step === 2 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -88,6 +117,8 @@ export function Demonstration3() {
                     >
                         {items2[1]}
                     </motion.p>
+                    <audio ref={ref2}></audio>
+
             </div>}
             {step === 3 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -99,19 +130,17 @@ export function Demonstration3() {
                     >
                         {items2[2]}
                     </motion.p>
+                    <audio ref={ref3}></audio>
+
             </div>}
-            {currentIndex < 1 && <motion.button 
-                onClick={handleNext}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Next</motion.button>}
+            {currentIndex < 1 && <div className="absolute right-32 bottom-12 z-2">
+            <Button3D onclick={handleNext}>Next</Button3D>
+            </div>}
             <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
         </div>
         <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
         </div>
             
             

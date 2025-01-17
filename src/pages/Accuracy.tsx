@@ -21,7 +21,7 @@ export function Accuracy() {
     const navigate = useNavigate()
     return (
         <div className="h-screen font-rock2 w-full flex flex-col justify-center items-center">
-            <audio src="./audio/AccuracyAudio.mp3" ref={audioRef}/>
+            <audio src="./audio/AudioAccuracy.wav" ref={audioRef}/>
             <img src="/images/rad.jpeg" className="-z-10 absolute inset-0 w-full h-full object-cover" alt="Background" />
 
             <motion.div 

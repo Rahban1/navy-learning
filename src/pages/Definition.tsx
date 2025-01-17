@@ -21,7 +21,7 @@ export function Definition() {
     const navigate = useNavigate()
     return (
         <div className="h-screen w-full  flex flex-col justify-center items-center font-rock2">
-            <audio ref={audioRef} src="./audio/definitionAudio.mp3"/>
+            <audio ref={audioRef} src="./audio/AudioDefinition.mp3"/>
             <img src="/images/rad.jpeg" className="-z-10 absolute inset-0 w-full h-full object-cover" alt="Background" />
 
             <motion.div 

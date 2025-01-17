@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { AnimatedButton } from "../components/AnimatedButton";
 import { BackIcon } from "../icons/BackIcon";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 import { Arrow } from "../components/Arrow";
@@ -18,12 +18,22 @@ export function MapCRanges() {
         "Similarly, the distance marked as NMT indicates that the perpendicular distance between own ship and ICTT edge should not be more than 3.1c at any instant in order for the ship to remain in safe waters.",
         "Demonstration will explain the usage of Clearing ranges by the Blind Safety Officer on Radar Display"
     ];
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    const audio = ["cr1.wav","cr2.wav","cr3.wav","cr4.wav","cr5.wav","cr6.wav"]
 
     const handleNext = () => {
         if (currentIndex < items.length - 1) {
             setCurrentIndex(currentIndex + 1);
         }
     };
+
+    useEffect(()=>{
+        if(audioRef.current) {
+            audioRef.current.src = `audio/cr/${audio[currentIndex]}`;
+            audioRef.current.play()
+        }
+    },[currentIndex])
 
     return (
         <div className="relative  h-screen font-rock2 bg-cover bg-center bg-[url(/images/map.jpeg)]">
@@ -33,10 +43,10 @@ export function MapCRanges() {
                 }}/>
             </div>
             <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
         </div>
         <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
         </div>
             <div className="absolute right-[25%] top-[15%] z-2">
           <Button3D >Clearing Ranges</Button3D>
@@ -60,20 +70,13 @@ export function MapCRanges() {
                     </motion.li>
                 </ol>
             </div>
-            {currentIndex < 5 && <motion.button 
-                onClick={handleNext}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Next</motion.button>}
-            <motion.button 
-                onClick={()=>{navigate('/demonstration3')}}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute left-[70%] bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Move to the Demo</motion.button>
+            {currentIndex < 5 && <div className="absolute right-32 bottom-12 z-2">
+            <Button3D onclick={handleNext}>Next</Button3D>
+            </div>}
+            <audio ref={audioRef}></audio>
+            <div className="absolute left-[73%] bottom-12 z-2">
+            <Button3D onclick={()=>{navigate('/demonstration3')}}>Move to the Demo</Button3D>
+            </div>
         </div>
     )
 }

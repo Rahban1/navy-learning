@@ -6,20 +6,20 @@ import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 import { Arrow } from "../components/Arrow";
 
-export function MapCir() {
+export function MapWheelover() {
     const navigate = useNavigate()
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const items = [
-        "The Cross Index Range is the ideal range at which the PIL should just touch the radar conspicuous object in order for the ship to be on track.",
-        "It is the perpendicular distance between the chosen track and the Parallel Index Line.",
-        "The EBL and VRM feature of the radar is used to determine as to how much the ship is off track to port or starboard. The same is explained through a demonstration."
+        "The wheel over CIR is used to determine the point of wheel over on radar display for the Blind Safety Officer.",
+        "A PIL parallel to the next course is drawn to find out the wheel over CIR.",
+        "A dotted line parallel to the next course is drawn on chart at the wheel over point of the selected track.",
+        "The perpendicular distance between the dotted line drawn and the PIL of the next course is known as the wheel over CIR."
     ];
 
-    const audio = ["cir1.wav", "cir2.wav", "cir3.wav"];
-
-    const audioRef = useRef<HTMLAudioElement | null>(null);
-
+    const audio = ["wo1.wav","wo2.wav","wo3.wav","wo4.wav"];
+    const audioRef = useRef<HTMLAudioElement | null>(null)
+    
     const handleNext = () => {
         if (currentIndex < items.length - 1) {
             setCurrentIndex(currentIndex + 1);
@@ -28,8 +28,8 @@ export function MapCir() {
 
     useEffect(()=>{
         if(audioRef.current) {
-            audioRef.current.src = `audio/cir/${audio[currentIndex]}`;
-            audioRef.current.play()
+            audioRef.current.src = `audio/wheelover/${audio[currentIndex]}`;
+            audioRef.current.play();
         }
     },[currentIndex])
 
@@ -40,18 +40,18 @@ export function MapCir() {
                     navigate(-1)
                 }}/>
             </div>
-            <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
-        </div>
-        <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
-        </div>
-            <div className="absolute right-[49%] top-[51%] z-2">
-            <Button3D>Cross Index Range</Button3D>
+            <div className="absolute right-[10%] top-[35%] z-2">
+                <Button3D>Wheel Over CIR</Button3D>
             </div>
-        <div className="absolute right-[52%] top-[38%] z-2">
-            <Arrow rotation={270} size={4}/>
-        </div>
+            <div className="absolute right-[20%] top-[37%] z-2">
+                <Arrow rotation={140} size={3}/>
+            </div>
+            <div className="absolute left-[2%] bottom-[8%] z-2">
+                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+            </div>
+            <div className="absolute left-[2%] bottom-[2%] z-2">
+                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+            </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
                     <motion.li 
@@ -66,11 +66,11 @@ export function MapCir() {
                 </ol>
             </div>
             <audio ref={audioRef}></audio>
-            {currentIndex < 2 && <div className="absolute right-32 bottom-12 z-2">
+            {currentIndex < 3 && <div className="absolute right-32 bottom-12 z-2">
             <Button3D onclick={handleNext}>Next</Button3D>
             </div>}
             <div className="absolute left-[73%] bottom-12 z-2">
-            <Button3D onclick={()=>{navigate('/demonstration2')}}>Move to the Demo</Button3D>
+            <Button3D onclick={()=>{navigate('/demonstration4')}}>Move to the Demo</Button3D>
             </div>
         </div>
     )

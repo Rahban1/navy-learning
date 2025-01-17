@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { AnimatedButton } from "../components/AnimatedButton";
 import { BackIcon } from "../icons/BackIcon";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 
@@ -16,6 +16,15 @@ export function Demonstration4() {
         "The EBL is set opposite to the course at 258 ½ and the VRM is set so as to intersect the PIL and EBL together.",
         "The Value of VRM at the intersection gives the distance to wheel over at any instant until the PIL set at 0.5c touches the Willingdon Island edge denoting the ship at wheel over when the course is altered to 107 ½"
         ]
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+    useEffect(()=>{
+        if(audioRef.current) {
+            audioRef.current.src = `audio/demo4/d1.wav`;
+            if(currentIndex === 0){
+                audioRef.current.play()
+            }
+        }
+    },[currentIndex])
     const navigate = useNavigate()
     const handleNext = ()=>{
         setCurrentIndex(currentIndex + 1)
@@ -28,13 +37,9 @@ export function Demonstration4() {
                 setStep(2);
             },25000)
             
-            
-            
-
             return(()=>{
                 clearTimeout(timer1)
                 clearTimeout(timer2);
-                clearTimeout(timer3);
             })
             
         }
@@ -49,7 +54,7 @@ export function Demonstration4() {
             <source src="./video/wheelover.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
-        
+        <audio ref={audioRef}></audio>
 
         </div>
         <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">

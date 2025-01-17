@@ -164,13 +164,9 @@ export function Execution() {
                         {items2[6]}
                     </motion.p>
             </div>}
-            {currentIndex < 1 && <motion.button 
-                onClick={handleNext}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Next</motion.button>}
+            {currentIndex < 1 && <div className="absolute right-32 bottom-16 z-2">
+            <Button3D onclick={handleNext}>Next</Button3D>
+            </div>}
             <div className="absolute left-[2%] bottom-[8%] z-2">
                 <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
         </div>

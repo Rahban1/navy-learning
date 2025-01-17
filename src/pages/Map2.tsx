@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { AnimatedButton } from "../components/AnimatedButton";
 import { BackIcon } from "../icons/BackIcon";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 import { Arrow } from "../components/Arrow";
@@ -9,6 +9,18 @@ import { Arrow } from "../components/Arrow";
 export function Map2() {
     const navigate = useNavigate()
     const [currentIndex, setCurrentIndex] = useState(0);
+    const audioRef = useRef<HTMLAudioElement | null>(null)
+
+    const audio = [
+        "pil1.wav","pil2.wav","pil3.wav","pil4.wav","pil5.wav"
+    ]
+
+    useEffect(()=>{
+        if(audioRef.current) {
+            audioRef.current.src = `audio/pil/${audio[currentIndex]}`;
+            audioRef.current.play();
+        }
+    },[currentIndex])
 
     const items = [
         "A Parallel Index Line (PIL) is drawn parallel to the chosen track touching the edge of the radar conspicuous object.",
@@ -17,6 +29,8 @@ export function Map2() {
         "This CIR is used to determine whether the ship on track or off track and by how much using the PIL feature on Radar Display. The same is explained in the demo ahead.",
         "A blind plan may or may not have a PIL each on either side of the track or may have multiple PILs depending on the availability of Radar Conspicuous Objects."
     ];
+
+    
 
     const handleNext = () => {
         if (currentIndex < items.length - 1) {
@@ -32,10 +46,10 @@ export function Map2() {
                 }}/>
             </div>
             <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
         </div>
         <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
         </div>
             <div className="absolute right-[25%] top-[6%] z-2">
             <Button3D>Parallel Index Line</Button3D>
@@ -56,20 +70,13 @@ export function Map2() {
                     </motion.li>
                 </ol>
             </div>
-            {currentIndex < 4 && <motion.button 
-                onClick={handleNext}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Next</motion.button>}
-            <motion.button 
-                onClick={()=>{navigate('/demonstration')}}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute left-[70%] bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Move to the Demo</motion.button>
+            <audio  ref={audioRef}></audio>
+            {currentIndex < 4 && <div className="absolute right-32 bottom-12 z-2">
+            <Button3D onclick={handleNext}>Next</Button3D>
+            </div>}
+            <div className="absolute left-[73%] bottom-12 z-2">
+            <Button3D onclick={()=>{navigate('/demonstration')}}>Move to the Demo</Button3D>
+            </div>
         </div>
     )
 }

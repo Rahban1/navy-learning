@@ -21,7 +21,7 @@ export function Howisthisdone() {
     const navigate = useNavigate()
     return (
         <div className="h-screen w-full font-rock2 flex flex-col justify-center items-center">
-            <audio src="./audio/HowAudio.mp3" ref={audioRef}/>
+            <audio src="./audio/AudioHITD.mp3" ref={audioRef}/>
             <img src="/images/rad.jpeg" className="-z-10 absolute inset-0 w-full h-full object-cover" alt="Background" />
             <motion.div 
                 initial={{ opacity: 0 }} 
