@@ -1,9 +1,12 @@
 import React from 'react';
-import { emit } from '@tauri-apps/api/event';
 
-const ExitButton: React.FC = () => {
+interface ExitButtonProps {
+  onExit: () => void; // Callback function to handle exit
+}
+
+const ExitButton: React.FC<ExitButtonProps> = ({ onExit }) => {
   const handleExit = async () => {
-    await emit("app-exit"); // Emit a custom event to trigger backend exit
+    onExit(); // Call the exit function passed as a prop
   };
 
   return (

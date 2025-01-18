@@ -25,6 +25,28 @@ export function Demonstration4() {
             }
         }
     },[currentIndex])
+    useEffect(()=>{
+        if(audioRef.current) {
+            audioRef.current.src = `audio/demo4/d1.wav`;
+            if(currentIndex === 0){
+                audioRef.current.play()
+            }
+        }
+    },[currentIndex])
+    useEffect(()=>{
+        if(step === 1 && ref1.current) {
+            ref1.current.src = `audio/demo4/d2.wav`;
+            ref1.current.play()
+        }
+        if(step === 2 && ref2.current) {
+            ref2.current.src = `audio/demo4/d3.wav`;
+            ref2.current.play()
+        }
+    },[step])
+    const ref1 = useRef<HTMLAudioElement | null>(null);
+    const ref2 = useRef<HTMLAudioElement | null>(null);
+    
+
     const navigate = useNavigate()
     const handleNext = ()=>{
         setCurrentIndex(currentIndex + 1)
@@ -80,7 +102,9 @@ export function Demonstration4() {
                     >
                         {items2[0]}
                     </motion.p>
+                    <audio ref={ref1}></audio>
             </div>}
+
             {step === 2 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
                         key={currentIndex} 
@@ -91,19 +115,17 @@ export function Demonstration4() {
                     >
                         {items2[1]}
                     </motion.p>
+                    <audio ref={ref2}></audio>
+
             </div>}
-            {currentIndex < 1 && <motion.button 
-                onClick={handleNext}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="absolute right-32 bottom-16 mt-4 bg-blue-500 text-white py-2 px-4 text-2xl rounded"
-            >Next</motion.button>}
+            {currentIndex < 1 && <div className="absolute right-32 bottom-12 z-2">
+            <Button3D onclick={handleNext}>Next</Button3D>
+            </div>}
             <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
         </div>
         <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
         </div>
             
             

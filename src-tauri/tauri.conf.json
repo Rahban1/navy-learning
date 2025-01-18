@@ -13,9 +13,8 @@
     "windows": [
       {
         "title": "navy-learning",
-        "width": 800,
-        "height": 600,
-        "fullscreen": true
+        "width": 1500,
+        "height": 1300
       }
     ],
     "security": {

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { AnimatedButton } from "../components/AnimatedButton";
 import { BackIcon } from "../icons/BackIcon";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 
@@ -20,8 +20,53 @@ export function Execution() {
         "Bridge blind, 60 yards to wheel over)",
         "Bridge Blind, Ship at Wheel Over.",
         "Whilst the ship is settling on to the next leg, the Blind Safety Officer is to optimise the display for the next leg along with monitoring the turn and advising the NO as to how the ship is settling for next leg."
-
         ]
+        const audioRef = useRef<HTMLAudioElement| null>(null)
+        useEffect(()=>{
+            if(audioRef.current) {
+                audioRef.current.src = `audio/execution/e1.wav`;
+                if(currentIndex == 0){
+                    audioRef.current.play()
+                }
+            }
+        },[currentIndex])
+        useEffect(()=>{
+            if(step === 1 && ref1.current) {
+                ref1.current.src = `audio/execution/e2.wav`;
+                ref1.current.play()
+            }
+            if(step === 2 && ref2.current) {
+                ref2.current.src = `audio/execution/e3.wav`;
+                ref2.current.play()
+            }
+            if(step === 3 && ref3.current) {
+                ref3.current.src = `audio/execution/e4.wav`;
+                ref3.current.play()
+            }
+            if(step === 4 && ref4.current) {
+                ref4.current.src = `audio/execution/e5.wav`;
+                ref4.current.play()
+            }
+            if(step === 5 && ref5.current) {
+                ref5.current.src = `audio/execution/e6.wav`;
+                ref5.current.play()
+            }
+            if(step === 6 && ref6.current) {
+                ref6.current.src = `audio/execution/e7.wav`;
+                ref6.current.play()
+            }
+            if(step === 7 && ref7.current) {
+                ref7.current.src = `audio/execution/e8.wav`;
+                ref7.current.play()
+            }            
+        },[step])
+        const ref1 = useRef<HTMLAudioElement | null>(null);
+        const ref2 = useRef<HTMLAudioElement | null>(null);
+        const ref3 = useRef<HTMLAudioElement | null>(null);
+        const ref4 = useRef<HTMLAudioElement | null>(null);
+        const ref5 = useRef<HTMLAudioElement | null>(null);
+        const ref6 = useRef<HTMLAudioElement | null>(null);
+        const ref7 = useRef<HTMLAudioElement | null>(null);
     const navigate = useNavigate()
     const handleNext = ()=>{
         setCurrentIndex(currentIndex + 1)
@@ -71,7 +116,7 @@ export function Execution() {
             <source src="./video/wheelover.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
-        
+        <audio ref={audioRef}></audio>
 
         </div>
         <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
@@ -97,6 +142,7 @@ export function Execution() {
                     >
                         {items2[0]}
                     </motion.p>
+                    <audio ref={ref1}></audio>
             </div>}
             {step === 2 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -108,6 +154,7 @@ export function Execution() {
                     >
                         {items2[1]}
                     </motion.p>
+                    <audio ref={ref2}></audio>
             </div>}
             {step === 3 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -119,6 +166,7 @@ export function Execution() {
                     >
                         {items2[2]}
                     </motion.p>
+                    <audio ref={ref3}></audio>
             </div>}
             {step === 4 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -130,6 +178,8 @@ export function Execution() {
                     >
                         {items2[3]}
                     </motion.p>
+                    <audio ref={ref4}></audio>
+
             </div>}
             {step === 5 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -141,6 +191,8 @@ export function Execution() {
                     >
                         {items2[4]}
                     </motion.p>
+                    <audio ref={ref5}></audio>
+
             </div>}
             {step === 6 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -152,6 +204,8 @@ export function Execution() {
                     >
                         {items2[5]}
                     </motion.p>
+                    <audio ref={ref6}></audio>
+
             </div>}
             {step === 7 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
@@ -163,6 +217,8 @@ export function Execution() {
                     >
                         {items2[6]}
                     </motion.p>
+                    <audio ref={ref7}></audio>
+
             </div>}
             {currentIndex < 1 && <div className="absolute right-32 bottom-16 z-2">
             <Button3D onclick={handleNext}>Next</Button3D>

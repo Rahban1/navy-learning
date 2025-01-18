@@ -15,10 +15,10 @@ export function Radar2() {
           <Button3D onclick={()=>{navigate('/map2')}}>Parallel Index Line</Button3D>
         </div>
         <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/')}}>Home</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
         </div>
         <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400" onclick={()=>{navigate('/list')}}>Index</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
         </div>
         <div className="absolute left-[24%] top-[42%] z-2">
             <Arrow color="text-white" rotation={-27} size={4}/>

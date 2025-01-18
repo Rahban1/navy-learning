@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export function Definition() {
+
     const audioRef = useRef<HTMLAudioElement>(null)
+
     useEffect(()=>{
         const playAudio = async () => {
             try {
@@ -18,7 +20,9 @@ export function Definition() {
         }
         playAudio();
     },[])
+
     const navigate = useNavigate()
+    
     return (
         <div className="h-screen w-full  flex flex-col justify-center items-center font-rock2">
             <audio ref={audioRef} src="./audio/AudioDefinition.mp3"/>

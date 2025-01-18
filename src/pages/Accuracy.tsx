@@ -6,7 +6,9 @@ import { motion } from "framer-motion"
 import { useEffect, useRef } from "react"
 
 export function Accuracy() {
+
     const audioRef = useRef<HTMLAudioElement>(null);
+
     useEffect(()=>{
         const playAudio = async ()=>{
             try {
@@ -18,7 +20,9 @@ export function Accuracy() {
         };
         playAudio();
     },[])
+
     const navigate = useNavigate()
+    
     return (
         <div className="h-screen font-rock2 w-full flex flex-col justify-center items-center">
             <audio src="./audio/AudioAccuracy.wav" ref={audioRef}/>
