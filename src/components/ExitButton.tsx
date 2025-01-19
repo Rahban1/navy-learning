@@ -1,12 +1,13 @@
 import React from 'react';
+import { exit } from '@tauri-apps/plugin-process';
+// when using "withGlobalTauri": true, you may use
+// const { exit, relaunch } = window._TAURI_.process;
 
-interface ExitButtonProps {
-  onExit: () => void; // Callback function to handle exit
-}
+// exits the app with the given status code
 
-const ExitButton: React.FC<ExitButtonProps> = ({ onExit }) => {
+const ExitButton: React.FC = () => {
   const handleExit = async () => {
-    onExit(); // Call the exit function passed as a prop
+    await exit(0);
   };
 
   return (

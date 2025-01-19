@@ -1,18 +1,21 @@
-export const Arrow = ({ size = 6, rotation = 0, color = "text-gray-800" }) => {
+export const Arrow = ({ length = 55, width = 40, rotation = 0 }) => {
   return (
-    <div>
-      <span
-        className={`font-bold ${color}`}
-        style={{ 
-          display: 'inline-block', 
-          fontSize: `${size * 2}rem`,
-          lineHeight: '1',
-          transform: `rotate(${rotation}deg)` 
-        }} 
+    <div
+      style={{
+        display: 'inline-block',
+        transform: `rotate(${rotation}deg)`
+      }}
+    >
+      <svg
+        width={length} 
+        height={width} 
+        viewBox="0 0 50 10" 
+        xmlns="http://www.w3.org/2000/svg"
+        fill= "black"
       >
-        &rarr;
-      </span>
+        <line x1="0" y1="5" x2="120" y2="5" stroke={"black"} strokeWidth="2" />
+        <polygon points="40,0 50,5 40,10" fill={"black"} />
+      </svg>
     </div>
   );
 };
-

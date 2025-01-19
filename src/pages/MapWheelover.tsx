@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 import { Arrow } from "../components/Arrow";
+import ExitButton from "../components/ExitButton";
 
 export function MapWheelover() {
     const navigate = useNavigate()
@@ -39,6 +40,9 @@ export function MapWheelover() {
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
                     navigate(-1)
                 }}/>
+            </div>
+            <div className="absolute top-4 right-4">
+            <ExitButton/>
             </div>
             <div className="absolute right-[10%] top-[35%] z-2">
                 <Button3D>Wheel Over CIR</Button3D>

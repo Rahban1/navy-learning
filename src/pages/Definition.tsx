@@ -4,6 +4,7 @@ import { BackIcon } from "../icons/BackIcon";
 import { ListItem } from "../components/ListItem";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
+import ExitButton from "../components/ExitButton";
 
 export function Definition() {
 
@@ -27,7 +28,9 @@ export function Definition() {
         <div className="h-screen w-full  flex flex-col justify-center items-center font-rock2">
             <audio ref={audioRef} src="./audio/AudioDefinition.mp3"/>
             <img src="/images/rad.jpeg" className="-z-10 absolute inset-0 w-full h-full object-cover" alt="Background" />
-
+            <div className="absolute top-4 right-4">
+                <ExitButton/>
+            </div>
             <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 

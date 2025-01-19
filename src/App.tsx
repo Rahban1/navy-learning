@@ -13,7 +13,6 @@ import { Symbol } from "./pages/Symbol";
 import { Symbol2 } from "./pages/Symbol2";
 import { Explain2 } from "./pages/Explain2";
 import { Bridge } from "./pages/Bridge";
-import { Radar } from "./pages/Radar";
 import { Map } from "./pages/Map";
 import { Map2 } from "./pages/Map2";
 import { Radar2 } from "./pages/Radar2";
@@ -45,7 +44,6 @@ function App() {
         <Route path="/explain2" element={<Explain2/>}/>
         <Route path="/symbol2" element={<Symbol2/>}/>
         <Route path="/bridge" element={<Bridge/>}/>
-        <Route path="/radar" element={<Radar/>}/>
         <Route path="/radar2" element={<Radar2/>}/>
         <Route path="/map" element={<Map/>}/>
         <Route path="/map2" element={<Map2/>}/>

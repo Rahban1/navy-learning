@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 import { Arrow } from "../components/Arrow";
+import ExitButton from "../components/ExitButton";
 
 export function Map2() {
     const navigate = useNavigate()
@@ -47,6 +48,9 @@ export function Map2() {
             </div>
             <div className="absolute left-[2%] bottom-[8%] z-2">
                 <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
+        </div>
+        <div className="absolute top-4 right-4">
+                <ExitButton/>
         </div>
         <div className="absolute left-[2%] bottom-[2%] z-2">
                 <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>

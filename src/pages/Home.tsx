@@ -16,7 +16,7 @@ export function Home() {
                 <div>Lt Cdr Shanu Kumar</div>
                 <div>Lt Cdr Gaurav Kumar</div>
             </div>
-            <div className="absolute bottom-20 font-bold leading-loose tracking-wider right-8 text-xl text-white font-rock2">
+        <div className="absolute bottom-20 font-bold leading-loose tracking-wider right-8 text-2xl text-white font-rock2">
                 <div className="underline">Syndicate Mentor :-</div>
                 <div>D/C Apoorva Sharma</div>
             </div>

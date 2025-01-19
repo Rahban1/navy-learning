@@ -4,6 +4,7 @@ import { BackIcon } from "../icons/BackIcon";
 import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
+import ExitButton from "../components/ExitButton";
 
 export function Demonstration2() {
     const [currentIndex,setCurrentIndex] = useState(0);
@@ -104,11 +105,13 @@ export function Demonstration2() {
   return (
 
     <div className="relative h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)]">
-        
+        <div className="absolute top-4 right-4">
+            <ExitButton/>
+        </div>
         <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
-        <div className="w-1/2 absolute left-[5%] top-[30%] flex flex-col gap-4 z-10">
+    <div className="w-1/2 absolute left-[5%] top-[30%] flex flex-col gap-4 z-10">
         <video ref={video1ref} className="w-6/7 max-w-3xl h-auto" >
-            <source src="./video/cir.mp4" type="video/mp4" />
+            <source src="./videos/cir.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
         <audio ref={audioRef}></audio>
