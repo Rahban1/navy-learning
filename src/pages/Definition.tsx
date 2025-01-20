@@ -41,8 +41,8 @@ export function Definition() {
             <div className="flex justify-center items-center h-screen">
                 <div className="max-w-[80%] min-h-40 p-4 bg-[#00000066] rounded-lg shadow-lg border border-gray-300">
                     <div className="flex flex-col items-center">
-                        <div className="font-bold text-3xl text-center my-4 text-blue-600">DEFINITION</div>
-                        <div className="text-xl text-center text-white">Blind Pilotage means the navigating of the ship through restricted waters in low visibility with little or no recourse to the visual observation of objects outside the ship</div>
+                        <div className="font-bold text-3xl text-center my-4 text-white">DEFINITION</div>
+                        <div className="text-2xl text-center text-white">Blind Pilotage means the navigating of the ship through restricted waters in low visibility with little or no recourse to the visual observation of objects outside the ship</div>
                         <div className="flex justify-center text-white">
                             <ListItem text="How is this done" navigateTo="howisthisdone" />
                         </div>

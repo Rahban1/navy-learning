@@ -45,7 +45,7 @@ export function Bridge() {
       <div className="bg-blue-500 border-white border-2 bg-opacity-75 text-white text-3xl font-bold font-rock2 z-4 absolute top-12 left-1/2 transform -translate-x-1/2 p-4 rounded-lg shadow-lg">Welcome to the bridge. Hover on the equipment/topic you would like to learn about</div>
       <audio ref={audioRef} src='./audio/AudioBridge.mp3'/>
       <div 
-          className=' w-36 h-20 z-20 absolute left-[47rem] top-[34%]'
+          className=' w-36 h-20 z-20 absolute left-[39vw] top-[19vw]'
           onMouseEnter={()=>handleMouseEnter('Blind Pilotage')}
           onMouseLeave={handleMouseLeave}
           onClick={()=>{navigate('/list')}}

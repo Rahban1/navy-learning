@@ -20,16 +20,16 @@ export function Map() {
           </div>
         </div>
         
-        <div className="absolute left-[16%] top-[25%] z-2">
+        <div className="absolute left-[24vw] top-[14vw] z-2">
                 <Button3D onclick={()=>{navigate('/map2')}}>Parallel Index Line</Button3D>
         </div>
-        <div className="absolute left-[28%] top-[21%] z-2">
+        <div className="absolute left-[33vw] top-[14vw] z-2">
             <Arrow rotation={-12} length={50} width={20} />
         </div>
-        <div className="absolute left-[24%] top-[35%] z-2">
+        <div className="absolute left-[31vw] top-[20vw] z-2">
           <Button3D onclick={()=>{navigate('/map-cir')}}>Cross Index Range</Button3D>
         </div>
-        <div className="absolute left-[36%] top-[31%] z-2">
+        <div className="absolute left-[40vw] top-[20vw] z-2">
             <Arrow rotation={-12} />
         </div>
         <div className="absolute right-[10%] top-[35%] z-2">
@@ -54,7 +54,7 @@ export function Map() {
             <Arrow rotation={-35}/>
         </div>
         <div className="text-4xl font-bold text-white bg-blue-500 p-4 transform -translate-x-1/2 z-2 w-fit relative left-1/2 top-[78%]">Chart Symbols</div>
-        <div className="absolute right-[10%] top-[82%] z-2">
+        <div className="absolute right-[10%] bottom-8 z-2">
           <Button3D onclick={()=>{navigate('/radar2')}}>Radar Display</Button3D>
         </div>
     </div>

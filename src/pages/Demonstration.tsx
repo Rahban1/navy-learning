@@ -48,7 +48,7 @@ export  function Demonstration() {
             
         }
     }
-    const audio = ["d1.wav","d2.wav","d3.wav","d4.wav"]
+    const audio = ["d1.wav","d1n1.wav","d1n2.wav","d4.wav"]
     const audioRef = useRef<HTMLAudioElement | null>(null);
     useEffect(()=>{
         if(audioRef.current) {
@@ -58,7 +58,7 @@ export  function Demonstration() {
     },[currentIndex]);
     useEffect(()=>{
         if(step === 1 && ref.current) {
-            ref.current.src = `audio/demo1/d5.wav`;
+            ref.current.src = `audio/demo1/d1n3.wav`;
             ref.current.play()
         }
         if(step === 2 && ref2.current) {
@@ -73,82 +73,86 @@ export  function Demonstration() {
 
   return (
 
-    <div className="relative h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)]">
+    <div className="relative overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)]">
         <div className="absolute top-4 right-4">
             <ExitButton/>
         </div>
         <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
         <div className="w-1/2 absolute left-[5%] top-[5%] flex flex-col gap-4 z-10">
-        <video ref={video1ref} className="w-6/7 max-w-3xl h-auto" >
+        <video ref={video1ref} className="w-6/7 max-w-2xl h-auto" >
             <source src="./videos/map1.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
-        <video ref={video2ref} className="w-6/7 max-w-3xl h-auto" >
+        <video ref={video2ref} className="w-6/7 max-w-2xl h-auto" >
             <source src="./videos/radar1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
 
         </div>
-        <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+        {items[currentIndex] && (
+            <div className="absolute top-[30%] text-center w-1/3 py-8 px-6 right-24 z-4 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
                 <ol>
                     <motion.li 
                         key={currentIndex} 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }} 
                         transition={{ duration: 1.3 }}
-                        className="py-2  px-6"
+                        className="py-2 px-6"
                     >
                         {items[currentIndex]}
                     </motion.li>
                 </ol>
             </div>
-            {step === 1  && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                    <motion.p 
-                        key={currentIndex} 
-                        initial={{ opacity: 0 }} 
-                        animate={{ opacity: 1 }} 
-                        transition={{ duration: 1.3 }}
-                        className="py-2  px-6"
-                    >
-                        {items2[0]}
-                    </motion.p>
-                    <audio ref={ref}></audio>
-            </div>}
-            {step === 2 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                    <motion.p 
-                        key={currentIndex} 
-                        initial={{ opacity: 0 }} 
-                        animate={{ opacity: 1 }} 
-                        transition={{ duration: 1.3 }}
-                        className="py-2  px-6"
-                    >
-                        {items2[1]}
-                    </motion.p>
-                    <audio ref={ref2}></audio>
+        )}
 
-            </div>}
-            {step === 3 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                    <motion.p 
-                        key={currentIndex} 
-                        initial={{ opacity: 0 }} 
-                        animate={{ opacity: 1 }} 
-                        transition={{ duration: 1.3 }}
-                        className="py-2  px-6"
-                    >
-                        {items2[2]}
-                    </motion.p>
-                    <audio ref={ref3}></audio>
+        {step === 1  && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+                <motion.p 
+                    key={currentIndex} 
+                    initial={{ opacity: 0 }} 
+                    animate={{ opacity: 1 }} 
+                    transition={{ duration: 1.3 }}
+                    className="py-2  px-6"
+                >
+                    {items2[0]}
+                </motion.p>
+                <audio ref={ref}></audio>
+        </div>}
+        {step === 2 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+                <motion.p 
+                    key={currentIndex} 
+                    initial={{ opacity: 0 }} 
+                    animate={{ opacity: 1 }} 
+                    transition={{ duration: 1.3 }}
+                    className="py-2  px-6"
+                >
+                    {items2[1]}
+                </motion.p>
+                <audio ref={ref2}></audio>
 
-            </div>}
-            {currentIndex < 4 && <div className="absolute right-32 bottom-12 z-2">
-            <Button3D onclick={handleNext}>Next</Button3D>
-            </div>}
-            <div className="absolute right-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
-        </div>
-        <div className="absolute right-[2%] bottom-[2%] z-2">
+        </div>}
+        {step === 3 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+                <motion.p 
+                    key={currentIndex} 
+                    initial={{ opacity: 0 }} 
+                    animate={{ opacity: 1 }} 
+                    transition={{ duration: 1.3 }}
+                    className="py-2  px-6"
+                >
+                    {items2[2]}
+                </motion.p>
+                <audio ref={ref3}></audio>
+
+        </div>}
+        {currentIndex < 4 && <div className="absolute right-32 bottom-12 z-2">
+        <Button3D onclick={handleNext}>Next</Button3D>
+        </div>}
+        <div className="absolute left-6 bottom-8 z-2">
+            <div className="flex justify-center items-center gap-4">
                 <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
+                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
+            </div>
         </div>
+        
         <audio ref={audioRef}></audio>
             
             

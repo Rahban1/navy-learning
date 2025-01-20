@@ -22,7 +22,7 @@ export function Howisthisdone() {
     const navigate = useNavigate()
     return (
         <div className="h-screen w-full font-rock2 flex flex-col justify-center items-center">
-            <audio src="./audio/AudioHITD.mp3" ref={audioRef}/>
+            <audio src="./audio/hitd.wav" ref={audioRef}/>
             <img src="/images/rad.jpeg" className="-z-10 absolute inset-0 w-full h-full object-cover" alt="Background" />
             <div className="absolute top-4 right-4">
                 <ExitButton/>
@@ -37,9 +37,9 @@ export function Howisthisdone() {
             <div className="flex justify-center items-center h-screen text-white ">
                 <div className="max-w-[80%] min-h-40 p-4  rounded-lg shadow-lg bg-[#00000066] border border-gray-300">
                     <div className="flex flex-col items-center">
-                        <div className="font-bold text-3xl text-center my-4 uppercase text-blue-600">How is This Done?</div>
+                        <div className="font-bold text-3xl text-center my-4 uppercase text-white">How is This Done?</div>
                         <div className="text-xl text-center mb-4">The main aid to navigation that is used for Blind Pilotage is the High Definition Surface Warning Radar <br /> (i.e. the navigational radar fitted on the ships).</div>
-                        <div className="text-xl text-center text-blue-400">However, it also includes all available non-visual aids like AIS, GPS, etc.</div>
+                        <div className="text-xl text-center text-white">However, it also includes all available non-visual aids like AIS, GPS, etc.</div>
                         <ListItem text="How accurate is Blind Pilotage" navigateTo="accuracy"/>
                     </div>
 

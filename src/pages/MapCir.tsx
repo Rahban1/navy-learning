@@ -44,17 +44,17 @@ export function MapCir() {
             <div className="absolute top-4 right-4">
             <ExitButton/>
             </div>
-            <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
-        </div>
-        <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
+            <div className="absolute left-6 bottom-8 z-2">
+          <div className="flex justify-center items-center gap-4">
+            <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
+            <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
+          </div>
         </div>
             <div className="absolute right-[49%] top-[51%] z-2">
             <Button3D>Cross Index Range</Button3D>
             </div>
         <div className="absolute right-[52%] top-[38%] z-2">
-            <Arrow rotation={270} size={4}/>
+            <Arrow rotation={270} />
         </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
@@ -70,12 +70,17 @@ export function MapCir() {
                 </ol>
             </div>
             <audio ref={audioRef}></audio>
-            {currentIndex < 2 && <div className="absolute right-32 bottom-12 z-2">
-            <Button3D onclick={handleNext}>Next</Button3D>
-            </div>}
-            <div className="absolute left-[73%] bottom-12 z-2">
-            <Button3D onclick={()=>{navigate('/demonstration2')}}>Move to the Demo</Button3D>
+            <div className="absolute right-10 bottom-8 z-2">
+                <div className="flex justify-center items-center gap-4">
+                        {currentIndex < 2 && <div>
+                        <Button3D onclick={handleNext}>Next</Button3D>
+                        </div>}
+                        <div >
+                        <Button3D onclick={()=>{navigate('/demonstration2')}}>Move to the Demo</Button3D>
+                        </div>
+                </div>
             </div>
+            
         </div>
     )
 }

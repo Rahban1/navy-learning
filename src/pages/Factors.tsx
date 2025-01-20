@@ -38,7 +38,7 @@ export function Factors() {
             <div className="flex justify-center items-center h-screen">
                 <div className="max-w-[80%] min-h-40 p-6 text-white bg-[#00000066]  rounded-lg shadow-lg border border-gray-300">
                     <div className="flex flex-col items-center">
-                        <div className="font-bold text-4xl text-center my-4 text-blue-600">FACTORS TO BE CONSIDERED DURING BLIND PILOTAGE</div>
+                        <div className="font-bold text-4xl text-center my-4 text-white">FACTORS TO BE CONSIDERED DURING BLIND PILOTAGE</div>
                         <ul className="list-disc list-inside  text-2xl ">
                             <li className="my-2">The possibility of failure of radar and other aids to navigation.</li>
                             <li className="my-2">Presence of good radar conspicuous objects along the passage.</li>

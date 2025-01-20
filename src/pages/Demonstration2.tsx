@@ -33,7 +33,7 @@ export function Demonstration2() {
     },[currentIndex])
     useEffect(()=>{
         if(step === 1 && ref1.current) {
-            ref1.current.src = `audio/demo2/d2.wav`;
+            ref1.current.src = `audio/demo2/d2n3.wav`;
             ref1.current.play()
         }
         if(step === 2 && ref2.current) {
@@ -49,11 +49,11 @@ export function Demonstration2() {
             ref4.current.play()
         }
         if(step === 5 && ref5.current) {
-            ref5.current.src = `audio/demo2/d6.wav`;
+            ref5.current.src = `audio/demo2/d2n1.wav`;
             ref5.current.play()
         }
         if(step === 7 && ref6.current) {
-            ref6.current.src = `audio/demo2/d7.wav`;
+            ref6.current.src = `audio/demo2/d2n2.wav`;
             ref6.current.play()
         }
     },[step])
@@ -104,19 +104,19 @@ export function Demonstration2() {
     }
   return (
 
-    <div className="relative h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)]">
+    <div className="relative overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)]">
         <div className="absolute top-4 right-4">
             <ExitButton/>
         </div>
         <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
     <div className="w-1/2 absolute left-[5%] top-[30%] flex flex-col gap-4 z-10">
-        <video ref={video1ref} className="w-6/7 max-w-3xl h-auto" >
+        <video ref={video1ref} className="w-6/7 max-w-2xl h-auto" >
             <source src="./videos/cir.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
         </video>
         <audio ref={audioRef}></audio>
         </div>
-        <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+        {items[currentIndex] && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                 <ol>
                     <motion.li 
                         key={currentIndex} 
@@ -128,7 +128,7 @@ export function Demonstration2() {
                         {items[currentIndex]}
                     </motion.li>
                 </ol>
-            </div>
+            </div>}
             {step === 1 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
                         key={currentIndex} 
@@ -221,11 +221,11 @@ export function Demonstration2() {
             {currentIndex < 1 && <div className="absolute right-32 bottom-12 z-2">
             <Button3D onclick={handleNext}>Next</Button3D>
             </div>}
-            <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
-        </div>
-        <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
+            <div className="absolute left-6 bottom-8 z-2">
+                <div className="flex justify-center items-center gap-4">
+                    <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
+                    <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
+                </div>
         </div>
             
             

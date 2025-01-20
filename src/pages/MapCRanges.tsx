@@ -21,7 +21,7 @@ export function MapCRanges() {
     ];
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
-    const audio = ["cr1.wav","cr2.wav","cr3.wav","cr4.wav","cr5.wav","cr6.wav"]
+    const audio = ["cr1.wav","cr2.wav","cr3.wav","cr-new.wav","crnew-2.wav","cr6.wav"]
 
     const handleNext = () => {
         if (currentIndex < items.length - 1) {
@@ -46,20 +46,20 @@ export function MapCRanges() {
             <div className="absolute top-4 right-4">
             <ExitButton/>
             </div>
-            <div className="absolute left-[2%] bottom-[8%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
-        </div>
-        <div className="absolute left-[2%] bottom-[2%] z-2">
-                <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
+            <div className="absolute left-6 bottom-8 z-2">
+          <div className="flex justify-center items-center gap-4">
+            <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
+            <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
+          </div>
         </div>
             <div className="absolute right-[25%] top-[15%] z-2">
           <Button3D >Clearing Ranges</Button3D>
         </div>
         <div className="absolute right-[35%] top-[16%] z-2">
-            <Arrow rotation={160} size={4}/>
+            <Arrow rotation={160} />
         </div>
         <div className="absolute right-[30%] top-[20%] z-2">
-            <Arrow rotation={110} size={4}/>
+            <Arrow rotation={110} />
         </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
@@ -74,13 +74,18 @@ export function MapCRanges() {
                     </motion.li>
                 </ol>
             </div>
-            {currentIndex < 5 && <div className="absolute right-32 bottom-12 z-2">
-            <Button3D onclick={handleNext}>Next</Button3D>
-            </div>}
             <audio ref={audioRef}></audio>
-            <div className="absolute left-[73%] bottom-12 z-2">
-            <Button3D onclick={()=>{navigate('/demonstration3')}}>Move to the Demo</Button3D>
+            <div className="absolute right-10 bottom-8 z-2">
+                <div className="flex justify-center items-center gap-4">
+                        {currentIndex < 5 && <div>
+                        <Button3D onclick={handleNext}>Next</Button3D>
+                        </div>}
+                        <div >
+                        <Button3D onclick={()=>{navigate('/demonstration3')}}>Move to the Demo</Button3D>
+                        </div>
+                </div>
             </div>
+            
         </div>
     )
 }

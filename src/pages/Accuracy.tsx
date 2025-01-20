@@ -42,7 +42,7 @@ export function Accuracy() {
                 <div className="max-w-[80%] min-h-40 p-4 text-white rounded-lg shadow-lg border border-gray-300 bg-[#00000066]">
                     <div className="flex flex-col items-center">
                         <div className="font-bold text-3xl text-center my-4 ">ACCURACY</div>
-                        <div className="text-xl text-center mb-4 text-[#007BFF]">The accuracy of Blind Pilotage is such that the ship can be taken to an open anchorage and anchored to within <span className="font-semibold">50 yards</span> of the desired position.</div>
+                        <div className="text-xl text-center mb-4 text-white">The accuracy of Blind Pilotage is such that the ship can be taken to an open anchorage and anchored to within <span className="font-semibold">50 yards</span> of the desired position.</div>
                         <div className="text-xl text-center ">However, the degree of risks involved must be carefully assessed before embarking on a passage relying totally on Blind Pilotage in conditions of poor visibility.</div>
                         <ListItem text="Factors that need to be borne in mind" navigateTo="factors" />
                     </div>
