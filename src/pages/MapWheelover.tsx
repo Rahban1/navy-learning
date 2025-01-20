@@ -36,7 +36,7 @@ export function MapWheelover() {
 
     return (
         <div className="relative overflow-hidden h-screen  text-2xl">
-        <img src="/images/wheelover.png" className="absolute inset-0 w-full h-auto " alt="Background" />
+        <img src="/images/wo2.png" className="absolute inset-0 w-full h-auto " alt="Background" />
     
             <div className="absolute left-0">
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
@@ -46,7 +46,7 @@ export function MapWheelover() {
             <div className="absolute top-4 right-4">
             <ExitButton/>
             </div>
-            <div className="absolute right-[17%] top-[36%] z-2">
+            <div className="absolute right-[14%] top-[36%] z-2">
                 <Button3D>Wheel Over CIR</Button3D>
             </div>
             <div className="absolute left-6 bottom-8 z-2">
