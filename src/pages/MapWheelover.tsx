@@ -38,7 +38,7 @@ export function MapWheelover() {
         <div className="relative overflow-hidden h-screen  text-2xl">
         <img src="/images/wo2.png" className="absolute inset-0 w-full h-full object-cover " alt="Background" />
     
-            <div className="absolute left-0">
+            <div className="absolute left-4 top-4 z-4">
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
                     navigate(-1)
                 }}/>

@@ -38,7 +38,7 @@ export function MapCir() {
         <div className="relative overflow-hidden h-screen  text-2xl">
         <img src="/images/cirmap.png" className="absolute inset-0 w-full h-full " alt="Background" />
     
-            <div className="absolute left-0">
+            <div className="absolute left-2 top-2 z-4">
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
                     navigate(-1)
                 }}/>
