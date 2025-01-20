@@ -8,7 +8,8 @@ import ExitButton from "../components/ExitButton";
 export function Map() {
     const navigate = useNavigate();
   return (
-    <div className="relative overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/map.jpeg)] text-2xl">
+    <div className="relative overflow-hidden h-screen  text-2xl">
+        <img src="/images/map.jpeg" className="absolute inset-0 w-full h-full " alt="Background" />
         <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
         <div className="absolute top-4 right-4">
           <ExitButton/>

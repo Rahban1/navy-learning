@@ -35,7 +35,9 @@ export function MapCir() {
     },[currentIndex])
 
     return (
-        <div className="relative  h-screen font-rock2 bg-cover bg-center bg-[url(/images/map.jpeg)]">
+        <div className="relative overflow-hidden h-screen  text-2xl">
+        <img src="/images/map.jpeg" className="absolute inset-0 w-full h-full " alt="Background" />
+    
             <div className="absolute left-0">
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
                     navigate(-1)

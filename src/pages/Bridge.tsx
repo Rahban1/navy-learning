@@ -35,7 +35,7 @@ export function Bridge() {
 
   return (
     <div className='overflow-hidden relative w-full h-screen'>
-      <img src="/images/bridge.jpeg" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
+        <img src="/images/bridge.jpeg" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
       <div className="absolute top-[2vw] right-[2vw]">
           <ExitButton/>
         </div>

@@ -30,12 +30,14 @@ export function MapWheelover() {
     useEffect(()=>{
         if(audioRef.current) {
             audioRef.current.src = `audio/wheelover/${audio[currentIndex]}`;
-            audioRef.current.play();
+            audioRef.current.play();    
         }
     },[currentIndex])
 
     return (
-        <div className="relative  h-screen font-rock2 bg-cover bg-center bg-[url(/images/map.jpeg)]">
+        <div className="relative overflow-hidden h-screen  text-2xl">
+        <img src="/images/map.jpeg" className="absolute inset-0 w-full h-auto " alt="Background" />
+    
             <div className="absolute left-0">
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
                     navigate(-1)
