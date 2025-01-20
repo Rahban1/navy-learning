@@ -9,7 +9,7 @@ export function Map() {
     const navigate = useNavigate();
   return (
     <div className="relative overflow-hidden h-screen  text-2xl">
-        <img src="/images/map.jpeg" className="absolute inset-0 w-full h-full " alt="Background" />
+        <img src="/images/mapog.png" className="absolute inset-0 w-full h-full " alt="Background" />
         <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
         <div className="absolute top-4 right-4">
           <ExitButton/>
@@ -20,39 +20,20 @@ export function Map() {
             <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
           </div>
         </div>
-        
-        <div className="absolute left-[24vw] top-[14vw] z-2">
+        <div className="absolute left-[23vw] top-[13vw] z-2">
                 <Button3D onclick={()=>{navigate('/map2')}}>Parallel Index Line</Button3D>
         </div>
-        <div className="absolute left-[33vw] top-[14vw] z-2">
-            <Arrow rotation={-12} length={50} width={20} />
-        </div>
-        <div className="absolute left-[31vw] top-[20vw] z-2">
+        <div className="absolute left-[30vw] top-[19vw] z-2">
           <Button3D onclick={()=>{navigate('/map-cir')}}>Cross Index Range</Button3D>
         </div>
-        <div className="absolute left-[40vw] top-[20vw] z-2">
-            <Arrow rotation={-12} />
-        </div>
-        <div className="absolute right-[10%] top-[35%] z-2">
+        <div className="absolute right-[15%] top-[38%] z-2">
           <Button3D onclick={()=>{navigate('/map-wheelover')}}>Wheel Over CIR</Button3D>
         </div>
-        <div className="absolute right-[20%] top-[37%] z-2">
-            <Arrow rotation={140} />
-        </div>
-        <div className="absolute right-[25%] top-[15%] z-2">
+        <div className="absolute right-[26%] top-[17%] z-2">
           <Button3D onclick={()=>{navigate('/map-c-ranges')}}>Clearing Ranges</Button3D>
         </div>
-        <div className="absolute right-[35%] top-[16%] z-2">
-            <Arrow rotation={160} />
-        </div>
-        <div className="absolute right-[30%] top-[20%] z-2">
-            <Arrow rotation={110} />
-        </div>
-        <div className="absolute right-[26%] top-[61%] z-2">
+        <div className="absolute right-[30%] top-[57%] z-2">
           <Button3D>Parallel Index Line <br /> For Next Course</Button3D>
-        </div>
-        <div className="absolute right-[24%] top-[52%] z-2">
-            <Arrow rotation={-35}/>
         </div>
         <div className="text-4xl font-bold text-white bg-blue-500 p-4 transform -translate-x-1/2 z-2 w-fit relative left-1/2 top-[78%]">Chart Symbols</div>
         <div className="absolute right-[10%] bottom-8 z-2">
