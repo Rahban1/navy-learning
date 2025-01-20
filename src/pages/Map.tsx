@@ -20,10 +20,10 @@ export function Map() {
             <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
           </div>
         </div>
-        <div className="absolute left-[23vw] top-[13vw] z-2">
+        <div className="absolute left-[19vw] top-[14vw] z-2">
                 <Button3D onclick={()=>{navigate('/map2')}}>Parallel Index Line</Button3D>
         </div>
-        <div className="absolute left-[30vw] top-[19vw] z-2">
+        <div className="absolute left-[29vw] top-[20vw] z-2">
           <Button3D onclick={()=>{navigate('/map-cir')}}>Cross Index Range</Button3D>
         </div>
         <div className="absolute right-[15%] top-[38%] z-2">
