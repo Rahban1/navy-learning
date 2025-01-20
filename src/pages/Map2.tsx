@@ -41,7 +41,7 @@ export function Map2() {
 
     return (
         <div className="relative overflow-hidden h-screen  text-2xl">
-        <img src="/images/map.jpeg" className="absolute inset-0 w-full h-full " alt="Background" />
+        <img src="/images/map2.png" className="absolute inset-0 w-full h-full " alt="Background" />
     
             <div className="absolute left-0">
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
@@ -58,12 +58,9 @@ export function Map2() {
             <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
           </div>
         </div>
-        <div className="absolute top-[13%] left-[65%]">
+        <div className="absolute top-[11%] left-[65%]">
             <div className="relative z-2">
             <Button3D>Parallel Index Line</Button3D>
-            </div>
-            <div className="absolute top-0 transform -translate-x-14 left-0 z-2">
-                <Arrow rotation={180}/>
             </div>
         </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">

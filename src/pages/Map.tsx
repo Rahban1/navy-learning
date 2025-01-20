@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 import { AnimatedButton } from "../components/AnimatedButton"
 import { BackIcon } from "../icons/BackIcon"
 import Button3D from "../components/Button3d";
-import { Arrow } from "../components/Arrow";
 import ExitButton from "../components/ExitButton";
 
 export function Map() {
@@ -10,8 +9,10 @@ export function Map() {
   return (
     <div className="relative overflow-hidden h-screen  text-2xl">
         <img src="/images/mapog.png" className="absolute inset-0 w-full h-full " alt="Background" />
-        <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 left-4 z-4">
+          <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
+        </div>
+        <div className="absolute top-4 right-4 z-4">
           <ExitButton/>
         </div>
         <div className="absolute left-6 bottom-8 z-2">
