@@ -38,7 +38,7 @@ export function MapCRanges() {
 
     return (
         <div className="relative overflow-hidden h-screen  text-2xl">
-        <img src="/images/map.jpeg" className="absolute inset-0 w-full h-full " alt="Background" />
+        <img src="/images/mapf2.png" className="absolute inset-0 w-full h-full " alt="Background" />
     
             <div className="absolute left-0">
                 <AnimatedButton icon={<BackIcon/>} onclick={()=>{
@@ -58,12 +58,7 @@ export function MapCRanges() {
             <div className="relative z-2">
             <Button3D>Clearing Ranges</Button3D>
             </div>
-            <div className="absolute z-2 translate-x-10">
-                <Arrow rotation={140}/>
-            </div>
-            <div className="absolute translate-x-24 -translate-y-2 z-2">
-                <Arrow rotation={20}/>
-            </div>
+            
         </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
