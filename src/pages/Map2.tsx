@@ -58,7 +58,7 @@ export function Map2() {
             <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
           </div>
         </div>
-        <div className="absolute top-[13%] left-[67%]">
+        <div className="absolute top-[13%] left-[65%]">
             <div className="relative z-2">
             <Button3D>Parallel Index Line</Button3D>
             </div>

@@ -52,11 +52,13 @@ export function MapCir() {
             <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
           </div>
         </div>
-            <div className="absolute right-[49%] top-[51%] z-2">
+        <div className="absolute top-[43%] left-[40%]">
+            <div className="relative z-2">
             <Button3D>Cross Index Range</Button3D>
             </div>
-        <div className="absolute right-[52%] top-[38%] z-2">
-            <Arrow rotation={270} />
+            <div className="absolute top-0 transform -translate-y-12 translate-x-14 z-2">
+                <Arrow rotation={270}/>
+            </div>
         </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
