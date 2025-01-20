@@ -54,14 +54,16 @@ export function MapCRanges() {
             <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
           </div>
         </div>
-            <div className="absolute right-[25%] top-[15%] z-2">
-          <Button3D >Clearing Ranges</Button3D>
-        </div>
-        <div className="absolute right-[35%] top-[16%] z-2">
-            <Arrow rotation={160} />
-        </div>
-        <div className="absolute right-[30%] top-[20%] z-2">
-            <Arrow rotation={110} />
+        <div className="absolute top-[10%] left-[52%]">
+            <div className="relative z-2">
+            <Button3D>Clearing Ranges</Button3D>
+            </div>
+            <div className="absolute z-2 translate-x-10">
+                <Arrow rotation={140}/>
+            </div>
+            <div className="absolute translate-x-24 -translate-y-2 z-2">
+                <Arrow rotation={20}/>
+            </div>
         </div>
             <div className="w-1/3 absolute top-[40%] text-center left-4 py-4 px-4  z-4 bg-[#00000066] text-2xl font-rock2 font-bold  text-white">
                 <ol>
