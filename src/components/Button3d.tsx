@@ -18,7 +18,7 @@ const Button3D: React.FC<Button3DProps> = ({
   const [tiltStyle, setTiltStyle] = useState({})
   const buttonRef = useRef<HTMLButtonElement>(null)
 
-  const baseClasses = 'px-4 py-2 font-bold font-rock2 text-lg rounded-lg transition-all duration-200 transform focus:outline-none'
+  const baseClasses = 'px-6 py-4 font-bold font-rock2 text-lg rounded-lg transition-all duration-200 transform focus:outline-none'
   
   const typeClasses = {
     primary: 'bg-blue-500 text-white border-b-4 border-blue-700 hover:bg-blue-400',
