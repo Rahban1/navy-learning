@@ -32,7 +32,7 @@ export function Howisthisdone() {
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 0.5 }}
             >
-                <AnimatedButton icon={<BackIcon />} onclick={() => { navigate(-1) }} />
+                <AnimatedButton icon={<BackIcon />} onclick={() => { navigate('/definition') }} />
             </motion.div>
             <div className="flex justify-center items-center h-screen text-white ">
                 <div className="max-w-[80%] min-h-40 p-4  rounded-lg shadow-lg bg-[#00000066] border border-gray-300">

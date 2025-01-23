@@ -71,35 +71,41 @@ export function Demonstration3() {
             
         }
     }
-  return (
-
-    <div className="relative overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)]">
-        <div className="absolute top-4 right-4">
-            <ExitButton/>
-        </div>
-        <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
-        <div className="w-1/2 absolute left-[5%] top-[30%] flex flex-col gap-4 z-10">
-        <video ref={video1ref} className="w-6/7 max-w-2xl h-auto" >
-            <source src="./videos/clearingRanges.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-        </video>
-
-        <audio ref={audioRef}></audio>
-        </div>
-        {items[currentIndex] && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                <ol>
-                    <motion.li 
-                        key={currentIndex} 
-                        initial={{ opacity: 0 }} 
-                        animate={{ opacity: 1 }} 
-                        transition={{ duration: 1.3 }}
-                        className="py-2  px-6"
-                    >
-                        {items[currentIndex]}
-                    </motion.li>
-                </ol>
-            </div>}
-            {step === 1 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+    return (
+        <div className="overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)] flex flex-col gap-2">
+            <audio ref={audioRef}></audio>
+            <div className="flex justify-between items-center w-screen ">
+                <div className="px-2">
+                    <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
+                </div>
+                <div className="pr-6">
+                    <ExitButton/>
+                </div>
+            </div>
+            <div className="flex h-[86%] gap-4  w-[97%] mx-auto">
+                <div className="w-1/2  flex justify-center ">
+                    <video ref={video1ref} className="w-6/7  h-auto" >
+                        <source src="./videos/clearingRanges.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div className="w-1/2  flex items-center">
+                    {items[currentIndex] && (
+                    <div className="text-center py-8 px-6  bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                        <ol>
+                            <motion.li 
+                                key={currentIndex} 
+                                initial={{ opacity: 0 }} 
+                                animate={{ opacity: 1 }} 
+                                transition={{ duration: 1.3 }}
+                                className="py-2 px-6"
+                            >
+                                {items[currentIndex]}
+                            </motion.li>
+                        </ol>
+                    </div>
+                    )}
+                    {step === 1  && <div className=" text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                     <motion.p 
                         key={currentIndex} 
                         initial={{ opacity: 0 }} 
@@ -110,44 +116,49 @@ export function Demonstration3() {
                         {items2[0]}
                     </motion.p>
                     <audio ref={ref1}></audio>
-            </div>}
-            {step === 2 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                    <motion.p 
-                        key={currentIndex} 
-                        initial={{ opacity: 0 }} 
-                        animate={{ opacity: 1 }} 
-                        transition={{ duration: 1.3 }}
-                        className="py-2  px-6"
-                    >
-                        {items2[1]}
-                    </motion.p>
-                    <audio ref={ref2}></audio>
-
-            </div>}
-            {step === 3 && <div className=" absolute top-[30%] text-center w-1/3 py-8 px-6 right-24  z-4 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                    <motion.p 
-                        key={currentIndex} 
-                        initial={{ opacity: 0 }} 
-                        animate={{ opacity: 1 }} 
-                        transition={{ duration: 1.3 }}
-                        className="py-2  px-6"
-                    >
-                        {items2[2]}
-                    </motion.p>
-                    <audio ref={ref3}></audio>
-
-            </div>}
-            {currentIndex < 1 && <div className="absolute right-32 bottom-12 z-2">
-            <Button3D onclick={handleNext}>Next</Button3D>
-            </div>}
-            <div className="absolute left-6 bottom-8 z-2">
-                <div className="flex justify-center items-center gap-4">
+                    </div>}
+                    {step === 2 && <div className="text-center py-8 px-6  bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+                            <motion.p 
+                                key={currentIndex} 
+                                initial={{ opacity: 0 }} 
+                                animate={{ opacity: 1 }} 
+                                transition={{ duration: 1.3 }}
+                                className="py-2  px-6"
+                            >
+                                {items2[1]}
+                            </motion.p>
+                            <audio ref={ref2}></audio>
+    
+                    </div>}
+                    {step === 3 && <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+                            <motion.p 
+                                key={currentIndex} 
+                                initial={{ opacity: 0 }} 
+                                animate={{ opacity: 1 }} 
+                                transition={{ duration: 1.3 }}
+                                className="py-2  px-6"
+                            >
+                                {items2[2]}
+                            </motion.p>
+                            <audio ref={ref3}></audio>
+    
+                    </div>
+                    }
+    
+                </div>
+            </div>
+            <div className="flex justify-between w-screen mt-2">
+                <div className="flex justify-center items-center gap-4 pl-2">
                     <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
                     <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
                 </div>
+                {currentIndex < 1 && <div className="pr-14">
+                <Button3D onclick={handleNext}>Next</Button3D>
+                </div>}
+            </div>
+    
         </div>
-            
-            
-    </div>
-  )
+    )
 }
+
+

@@ -13,7 +13,7 @@ const ExitButton: React.FC = () => {
   return (
     <button
       onClick={handleExit}
-      className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded"
+      className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-110"
     >
       X
     </button>

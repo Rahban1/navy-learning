@@ -35,7 +35,7 @@ export function Bridge() {
 
   return (
     <div className='overflow-hidden relative w-full h-screen'>
-        <img src="/images/bridge.jpeg" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
+        <img src="/images/bridge.jpeg" className="absolute inset-0 w-full h-full " alt="Background" />
       <div className="absolute top-[2vw] right-[2vw]">
           <ExitButton/>
         </div>
@@ -50,27 +50,27 @@ export function Bridge() {
           onMouseLeave={handleMouseLeave}
           onClick={()=>{navigate('/list')}}
           ></div>
-      <div className="absolute left-[40vw] top-[16vw] z-2">
+      <div className="absolute left-[40vw] top-[18vw] z-2">
         <Button3D>Blind Pilotage</Button3D>
       </div>
-      <div className="absolute left-[28vw] top-[17vw] -rotate-6 z-2">
+      <div className="absolute left-[28vw] top-[19vw] -rotate-6 z-2">
       <Button3D>ECDIS</Button3D></div>
-      <div className="absolute left-[7vw] top-[20vw] -rotate-12  z-2 ">
+      <div className="absolute left-[7vw] top-[22vw] -rotate-12  z-2 ">
       <Button3D>Anchoring/ Ropework</Button3D></div>
-      <div className="absolute left-[48vw] top-[23vw] z-2 ">
+      <div className="absolute left-[48vw] top-[25vw] z-2 ">
       <Button3D>Propulsion</Button3D></div>
       <div className="absolute left-[50%] top-[72%] text-center z-2 ">
       <Button3D>Pelorus <br />Gyroscope <br />Magnetic Compass</Button3D>
       </div>
-      <div className="absolute left-[71vw] top-[16vw] rotate-6 z-2 ">
+      <div className="absolute left-[71vw] top-[18vw] rotate-6 z-2 ">
       <Button3D>Anti-Col</Button3D></div>
-      <div className="absolute left-[87vw] top-[19vw] rotate-12 z-2 ">
+      <div className="absolute left-[87vw] top-[21vw] rotate-12 z-2 ">
       <Button3D>Navigation Aids</Button3D></div>
 
       <AnimatePresence>
       {hoveredItem && (
         <motion.div
-          className="z-10 absolute left-[40rem] top-[15rem] w-[20rem] h-[20rem] bg-black shadow-lg p-4 rounded-lg overflow-hidden"
+          className="z-10 absolute left-[30rem] top-[14rem] w-[18rem] h-[18rem] bg-black shadow-lg p-4 rounded-lg overflow-hidden"
           initial={{ scale: 0.3, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.3, opacity: 0 }}

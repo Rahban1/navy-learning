@@ -13,11 +13,12 @@ export  function List() {
           <ExitButton/>
         </div>
         <div className="w-[80%] z-10 text-white">
-            <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
+            <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate('/bridge')}}/>
             <div className="text-6xl mb-8">BLIND PILOTAGE - INDEX</div>
             <ListItem text="Basics of Blind Pilotage" navigateTo="definition"/>
             <ListItem text="Chart Symbology" navigateTo="map"/>
             <ListItem text="Parallel Index Lines" navigateTo="map2"/>
+            <ListItem text="Cross Index Ranges" navigateTo="map-cir"/>
             <ListItem text="Radar Clearing Ranges" navigateTo="map-c-ranges"/>
             <ListItem text="Wheel Over CIRs" navigateTo="map-wheelover"/>
             <ListItem text="Execution of Blind Pilotage" navigateTo="execution"/>

@@ -8,20 +8,16 @@ import { Wheelover } from "./pages/Wheelover";
 import { Howisthisdone } from "./pages/Howisthisdone";
 import { Accuracy } from "./pages/Accuracy";
 import { Factors } from "./pages/Factors";
-import { Explain } from "./pages/Explain";
-import { Symbol } from "./pages/Symbol";
-import { Symbol2 } from "./pages/Symbol2";
-import { Explain2 } from "./pages/Explain2";
 import { Bridge } from "./pages/Bridge";
+import { Radar2 } from "./pages/Radar2";
 import { Map } from "./pages/Map";
 import { Map2 } from "./pages/Map2";
-import { Radar2 } from "./pages/Radar2";
-import { Demonstration } from "./pages/Demonstration";
 import { MapCir } from "./pages/MapCir";
-import { Demonstration2 } from "./pages/Demonstration2";
-import { MapCRanges } from "./pages/MapCRanges";
-import { Demonstration3 } from "./pages/Demonstration3";
 import { MapWheelover } from "./pages/MapWheelover";
+import { MapCRanges } from "./pages/MapCRanges";
+import { Demonstration } from "./pages/Demonstration";
+import { Demonstration2 } from "./pages/Demonstration2";
+import { Demonstration3 } from "./pages/Demonstration3";
 import { Demonstration4 } from "./pages/Demonstration4";
 import { Execution } from "./pages/Execution";
 
@@ -39,10 +35,6 @@ function App() {
         <Route path="/howisthisdone" element={<Howisthisdone/>}/>
         <Route path="/accuracy" element={<Accuracy/>}/>
         <Route path="/factors" element={<Factors/>}/>
-        <Route path="/symbol" element={<Symbol/>}/>
-        <Route path="/explain" element={<Explain/>}/>
-        <Route path="/explain2" element={<Explain2/>}/>
-        <Route path="/symbol2" element={<Symbol2/>}/>
         <Route path="/bridge" element={<Bridge/>}/>
         <Route path="/radar2" element={<Radar2/>}/>
         <Route path="/map" element={<Map/>}/>
