@@ -83,8 +83,8 @@ export  function Demonstration() {
                     <ExitButton/>
                 </div>
             </div>
-            <div className="flex gap-4  w-[90%] mx-auto">
-                <div className="w-1/2 flex flex-col gap-4">
+            <div className="flex gap-4 h-[90%] mx-auto">
+                <div className="w-1/2 flex justify-center items-center  flex-col gap-4">
                     <video ref={video1ref} className="w-6/7 max-w-2xl h-auto" >
                         <source src="./videos/map1.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
