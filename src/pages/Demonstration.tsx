@@ -84,7 +84,7 @@ export  function Demonstration() {
                 </div>
             </div>
             <div className="flex gap-4 h-[90%]">
-                <div className="w-1/2 flex border-2 border-green-500 justify-center items-center  flex-col gap-4">
+                <div className="w-1/2 flex justify-center items-center  flex-col gap-4">
                     <video ref={video1ref} className="w-6/7 max-w-2xl h-auto" >
                         <source src="./videos/map1.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
@@ -94,7 +94,7 @@ export  function Demonstration() {
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div className="w-1/2 border-2  flex items-center">
+                <div className="w-1/2 flex items-center">
                     {items[currentIndex] && (
                     <div className="text-center py-8 px-6  bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
                         <ol>

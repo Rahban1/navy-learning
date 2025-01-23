@@ -43,34 +43,34 @@ export function Bridge() {
         <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate('/')}}/>
       </div>
       <div className="bg-blue-500 border-white border-2 bg-opacity-75 text-white text-3xl font-bold font-rock2 z-4 absolute top-12 left-1/2 transform -translate-x-1/2 p-4 rounded-lg shadow-lg">Welcome to the bridge. Hover on the equipment/topic you would like to learn about</div>
-      <audio ref={audioRef} src='./audio/AudioBridge.mp3'/>
+      {/* <audio ref={audioRef} src='./audio/AudioBridge.mp3'/> */}
       <div 
           className=' w-36 h-20 z-20 absolute left-[39vw] top-[19vw]'
           onMouseEnter={()=>handleMouseEnter('Blind Pilotage')}
           onMouseLeave={handleMouseLeave}
           onClick={()=>{navigate('/list')}}
           ></div>
-      <div className="absolute left-[40vw] top-[18vw] z-2">
+      <div className="absolute left-[39%] top-[29%] z-2">
         <Button3D>Blind Pilotage</Button3D>
       </div>
-      <div className="absolute left-[28vw] top-[19vw] -rotate-6 z-2">
+      <div className="absolute left-[28%] top-[31%] -rotate-6 z-2">
       <Button3D>ECDIS</Button3D></div>
-      <div className="absolute left-[7vw] top-[22vw] -rotate-12  z-2 ">
+      <div className="absolute left-[6%] top-[36%] -rotate-12  z-2 ">
       <Button3D>Anchoring/ Ropework</Button3D></div>
-      <div className="absolute left-[48vw] top-[25vw] z-2 ">
+      <div className="absolute left-[48%] top-[40%] z-2 ">
       <Button3D>Propulsion</Button3D></div>
       <div className="absolute left-[50%] top-[72%] text-center z-2 ">
       <Button3D>Pelorus <br />Gyroscope <br />Magnetic Compass</Button3D>
       </div>
-      <div className="absolute left-[71vw] top-[18vw] rotate-6 z-2 ">
+      <div className="absolute left-[71%] top-[30%] rotate-6 z-2 ">
       <Button3D>Anti-Col</Button3D></div>
-      <div className="absolute left-[87vw] top-[21vw] rotate-12 z-2 ">
+      <div className="absolute left-[87%] top-[34%] rotate-12 z-2 ">
       <Button3D>Navigation Aids</Button3D></div>
 
       <AnimatePresence>
       {hoveredItem && (
         <motion.div
-          className="z-10 absolute left-[30rem] top-[14rem] w-[18rem] h-[18rem] bg-black shadow-lg p-4 rounded-lg overflow-hidden"
+          className="z-10 absolute left-[34%] top-[22%] w-[17%] h-[30%] bg-black shadow-lg p-4 rounded-lg overflow-hidden"
           initial={{ scale: 0.3, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.3, opacity: 0 }}
