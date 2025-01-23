@@ -200,7 +200,7 @@ export function Demonstration2() {
                         <audio ref={ref5}></audio>
     
                 </div>}
-                {step === 6 && <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
+                {/* {step === 6 && <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                         <motion.p 
                             key={currentIndex} 
                             initial={{ opacity: 0 }} 
@@ -211,7 +211,7 @@ export function Demonstration2() {
                             {items2[5]}
                         </motion.p>
     
-                </div>}
+                </div>} */}
                 {step === 7 && <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
                         <motion.p 
                             key={currentIndex} 
