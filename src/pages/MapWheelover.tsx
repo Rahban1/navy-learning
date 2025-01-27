@@ -4,7 +4,6 @@ import { BackIcon } from "../icons/BackIcon";
 import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
-import { Arrow } from "../components/Arrow";
 import ExitButton from "../components/ExitButton";
 
 export function MapWheelover() {

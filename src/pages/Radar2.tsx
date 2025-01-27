@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { AnimatedButton } from "../components/AnimatedButton";
 import { BackIcon } from "../icons/BackIcon";
 import Button3D from "../components/Button3d";
-import { Arrow } from "../components/Arrow";
 
 
 export function Radar2() {

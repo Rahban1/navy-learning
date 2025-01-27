@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from 'framer-motion'
 import Button3D from "../components/Button3d";
 import ExitButton from "../components/ExitButton";
-import { div } from "framer-motion/client";
 
 export  function Demonstration() {
     const [currentIndex,setCurrentIndex] = useState(0);
@@ -74,97 +73,102 @@ export  function Demonstration() {
 
     return (
         <div className="overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)] flex flex-col gap-2">
-            <audio ref={audioRef}></audio>
-            <div className="flex justify-between items-center w-screen ">
-                <div className="px-2">
-                    <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
-                </div>
-                <div className="pr-6">
-                    <ExitButton/>
-                </div>
+          <audio ref={audioRef}></audio>
+          <div className="flex justify-between items-center w-screen">
+            <div className="px-2">
+              <AnimatedButton icon={<BackIcon />} onclick={() => { navigate(-1); }} />
             </div>
-            <div className="flex gap-4 h-[90%]">
-                <div className="w-1/2 flex justify-center items-center  flex-col gap-4">
-                    <video ref={video1ref} className="w-6/7 max-w-2xl h-auto" >
-                        <source src="./videos/map1.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                    </video>
-                    <video ref={video2ref} className="w-6/7 max-w-2xl h-auto" >
-                        <source src="./videos/radar1.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div className="w-1/2 flex items-center">
-                    {items[currentIndex] && (
-                    <div className="text-center py-8 px-6  bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
-                        <ol>
-                            <motion.li 
-                                key={currentIndex} 
-                                initial={{ opacity: 0 }} 
-                                animate={{ opacity: 1 }} 
-                                transition={{ duration: 1.3 }}
-                                className="py-2 px-6"
-                            >
-                                {items[currentIndex]}
-                            </motion.li>
-                        </ol>
-                    </div>
-                    )}
-                    {step === 1  && <div className=" text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                    <motion.p 
-                        key={currentIndex} 
-                        initial={{ opacity: 0 }} 
-                        animate={{ opacity: 1 }} 
-                        transition={{ duration: 1.3 }}
-                        className="py-2  px-6"
+            <div className="pr-6">
+              <ExitButton />
+            </div>
+          </div>
+          <div className="flex gap-4 h-[90%] w-[97%]">
+            <div className="w-1/2 flex justify-center items-center flex-col gap-4 overflow-hidden">
+              {/* Video 1 */}
+              <video ref={video1ref} className="w-full h-full object-cover" >
+                <source src="./videos/map1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              {/* Video 2 */}
+              <video ref={video2ref} className="w-full h-full object-cover" >
+                <source src="./videos/radar1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="w-1/2 flex items-center">
+              {items[currentIndex] && (
+                <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                  <ol>
+                    <motion.li
+                      key={currentIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 1.3 }}
+                      className="py-2 px-6"
                     >
-                        {items2[0]}
-                    </motion.p>
-                    <audio ref={ref}></audio>
-                    </div>}
-                    {step === 2 && <div className="text-center py-8 px-6  bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                            <motion.p 
-                                key={currentIndex} 
-                                initial={{ opacity: 0 }} 
-                                animate={{ opacity: 1 }} 
-                                transition={{ duration: 1.3 }}
-                                className="py-2  px-6"
-                            >
-                                {items2[1]}
-                            </motion.p>
-                            <audio ref={ref2}></audio>
-    
-                    </div>}
-                    {step === 3 && <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold  text-white leading-relaxed">
-                            <motion.p 
-                                key={currentIndex} 
-                                initial={{ opacity: 0 }} 
-                                animate={{ opacity: 1 }} 
-                                transition={{ duration: 1.3 }}
-                                className="py-2  px-6"
-                            >
-                                {items2[2]}
-                            </motion.p>
-                            <audio ref={ref3}></audio>
-    
-                    </div>}
-                    
+                      {items[currentIndex]}
+                    </motion.li>
+                  </ol>
                 </div>
+              )}
+              {step === 1 && (
+                <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                  <motion.p
+                    key={currentIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.3 }}
+                    className="py-2 px-6"
+                  >
+                    {items2[0]}
+                  </motion.p>
+                  <audio ref={ref}></audio>
+                </div>
+              )}
+              {step === 2 && (
+                <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                  <motion.p
+                    key={currentIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.3 }}
+                    className="py-2 px-6"
+                  >
+                    {items2[1]}
+                  </motion.p>
+                  <audio ref={ref2}></audio>
+                </div>
+              )}
+              {step === 3 && (
+                <div className="text-center py-8 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                  <motion.p
+                    key={currentIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1.3 }}
+                    className="py-2 px-6"
+                  >
+                    {items2[2]}
+                  </motion.p>
+                  <audio ref={ref3}></audio>
+                </div>
+              )}
             </div>
-            <div className="flex justify-between w-screen mt-2">
-                <div className="flex justify-center items-center gap-4 pl-2">
-                    <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
-                    <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
-                </div>
-                {currentIndex < 4 && <div className="pr-14">
+          </div>
+          <div className="flex justify-between w-screen">
+            <div className="flex justify-center items-center gap-4 pl-2">
+              <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={() => { navigate('/list'); }}>Index</Button3D>
+              <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={() => { navigate('/'); }}>Home</Button3D>
+            </div>
+            {currentIndex < 4 && (
+              <div className="pr-14">
                 <Button3D onclick={handleNext}>Next</Button3D>
-                </div>}
-            </div>
-    
+              </div>
+            )}
+          </div>
         </div>
-    )
-    
-    
+      )
+          
     
 }
 

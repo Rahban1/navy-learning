@@ -121,7 +121,7 @@ export function Execution() {
             <div className="flex h-[86%] gap-4  w-[97%] mx-auto">
                 <div className="w-1/2  flex justify-center ">
                     <video ref={video1ref} className="w-6/7  h-auto" >
-                        <source src="./videos/clearingRanges.mp4" type="video/mp4" />
+                        <source src="./videos/execution.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                     </video>
                 </div>
