@@ -72,9 +72,9 @@ export  function Demonstration() {
     },[step])
 
     return (
-        <div className="overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)] flex flex-col gap-2">
+        <div className=" h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)] flex flex-col gap-2">
           <audio ref={audioRef}></audio>
-          <div className="flex justify-between items-center w-screen">
+          <div className="flex justify-between h-[10%] items-center w-screen">
             <div className="px-2">
               <AnimatedButton icon={<BackIcon />} onclick={() => { navigate(-1); }} />
             </div>
@@ -82,8 +82,8 @@ export  function Demonstration() {
               <ExitButton />
             </div>
           </div>
-          <div className="flex gap-4 h-[90%] w-[97%]">
-            <div className="w-1/2 flex justify-center items-center flex-col gap-4 overflow-hidden">
+          <div className="flex mx-auto h-[80%] gap-4 w-[97%]">
+            <div className="w-1/2 gap-2 flex justify-center items-center flex-col  overflow-hidden">
               {/* Video 1 */}
               <video ref={video1ref} className="w-full h-full object-cover" >
                 <source src="./videos/map1.mp4" type="video/mp4" />
@@ -155,7 +155,7 @@ export  function Demonstration() {
               )}
             </div>
           </div>
-          <div className="flex justify-between w-screen">
+          <div className="flex h-[10%] justify-between items-center w-screen">
             <div className="flex justify-center items-center gap-4 pl-2">
               <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={() => { navigate('/list'); }}>Index</Button3D>
               <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={() => { navigate('/'); }}>Home</Button3D>
