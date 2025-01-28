@@ -72,7 +72,7 @@ export  function Demonstration() {
     },[step])
 
     return (
-        <div className=" h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)] flex flex-col gap-2">
+        <div className="overflow-hidden h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)] flex flex-col gap-2">
           <audio ref={audioRef}></audio>
           <div className="flex justify-between h-[10%] items-center w-screen">
             <div className="px-2">
@@ -83,17 +83,21 @@ export  function Demonstration() {
             </div>
           </div>
           <div className="flex mx-auto h-[80%] gap-4 w-[97%]">
-            <div className="w-1/2 gap-2 flex justify-center items-center flex-col  overflow-hidden">
+            <div className="w-1/2 gap-4  flex flex-col justify-between items-center p-4">
               {/* Video 1 */}
-              <video ref={video1ref} className="w-full h-full object-cover" >
-                <source src="./videos/map1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <div className="h-[48%] w-full flex items-center justify-center">
+                <video ref={video1ref} className="h-full w-full object-contain " >
+                  <source src="./videos/map1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
               {/* Video 2 */}
-              <video ref={video2ref} className="w-full h-full object-cover" >
-                <source src="./videos/radar1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <div className="h-[48%] w-full flex items-center justify-center">
+                <video ref={video2ref} className="h-full w-full object-contain " >
+                  <source src="./videos/radar1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </div>
             <div className="w-1/2 flex items-center">
               {items[currentIndex] && (
