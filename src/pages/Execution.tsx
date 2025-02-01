@@ -18,9 +18,9 @@ export function Execution() {
         "Bridge Blind, Make Ship 40 yards port of track, distance to wheel over 2.7 cables.",
         "Bridge Blind, Make Ship 40 Yards port of track, distance to wheel over 1.9 cables.",
         "Bridge Blind, Make ship 20 yards port of track, distance to wheel over 1.5 cables",
-        "Bridge blind, 60 yards to wheel over)",
+        "Bridge blind, 60 yards to wheel over",
         "Bridge Blind, Ship at Wheel Over.",
-        "Whilst the ship is settling on to the next leg, the Blind Safety Officer is to optimise the display for the next leg along with monitoring the turn and advising the NO as to how the ship is settling for next leg."
+        "Whilst the ship is settling on to the next leg, the Blind Safety Officer is to optimize the display for the next leg along with monitoring the turn and advising the NO as to how the ship is settling for next leg."
         ]
         const audioRef = useRef<HTMLAudioElement| null>(null)
         useEffect(()=>{
