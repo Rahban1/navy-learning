@@ -105,7 +105,7 @@ export function Demonstration2() {
     return (
         <div className="h-screen font-rock2 bg-cover bg-center bg-[url(/images/rad.jpeg)] flex flex-col">
             <audio ref={audioRef}></audio>
-            <div className="flex justify-between h-[10%] items-center w-screen">
+            <div className="flex justify-between h-[7%] items-center w-screen">
                 <div className="px-2">
                     <AnimatedButton icon={<BackIcon/>} onclick={()=>{navigate(-1)}}/>
                 </div>
@@ -113,8 +113,8 @@ export function Demonstration2() {
                     <ExitButton/>
                 </div>
             </div>
-            <div className="flex flex-col h-[80%] w-[97%] mx-auto">
-                <div className="h-[72%]  flex justify-center items-center">
+            <div className="flex flex-col h-[86%] w-[97%] mx-auto">
+                <div className="h-[90%]  flex justify-center items-center">
                     <video ref={video1ref} className="h-full w-full object-contain" >
                         <source src="./videos/cir.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
@@ -122,7 +122,7 @@ export function Demonstration2() {
                 </div>
                 <div className="h-[40%] flex items-center justify-center overflow-y-auto">
                     {items[currentIndex] && (
-                        <div className="w-[66%] mx-auto text-center py-4 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                        <div className="w-[66%] mx-auto text-center py-4 px-6 bg-[#00000066] text-2xl font-rock2 font-bold text-white leading-relaxed">
                             <motion.li 
                                 key={currentIndex} 
                                 initial={{ opacity: 0 }} 
@@ -135,7 +135,7 @@ export function Demonstration2() {
                         </div>
                     )}
                     {step === 1 && (
-                        <div className="w-[66%] mx-auto text-center py-4 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                        <div className="w-[80%] mx-auto text-center py-4 px-6 bg-[#00000066] text-2xl font-rock2 font-bold text-white leading-relaxed">
                             <motion.p 
                                 key="step1"
                                 initial={{ opacity: 0 }} 
@@ -163,7 +163,7 @@ export function Demonstration2() {
                         </div>
                     )}
                     {step === 3 && (
-                        <div className="w-[66%] mx-auto text-center py-4 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                        <div className="w-[75%] mx-auto text-center py-4 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
                             <motion.p 
                                 key="step3"
                                 initial={{ opacity: 0 }} 
@@ -177,7 +177,7 @@ export function Demonstration2() {
                         </div>
                     )}
                     {step === 4 && (
-                        <div className="w-[66%] mx-auto text-center py-4 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                        <div className="w-[75%] mx-auto text-center py-4 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
                             <motion.p 
                                 key="step4"
                                 initial={{ opacity: 0 }} 
@@ -191,7 +191,7 @@ export function Demonstration2() {
                         </div>
                     )}
                     {step === 5 && (
-                        <div className="w-[66%] mx-auto text-center py-4 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                        <div className="w-[80%] mx-auto text-center py-4 px-6 bg-[#00000066] text-2xl font-rock2 font-bold text-white leading-relaxed">
                             <motion.p 
                                 key="step5"
                                 initial={{ opacity: 0 }} 
@@ -205,7 +205,7 @@ export function Demonstration2() {
                         </div>
                     )}
                     {step === 7 && (
-                        <div className="w-[66%] mx-auto text-center py-4 px-6 bg-[#00000066] text-3xl font-rock2 font-bold text-white leading-relaxed">
+                        <div className="w-[95%] mx-auto text-center py-4 px-6 bg-[#00000066] text-2xl font-rock2 font-bold text-white leading-relaxed">
                             <motion.p 
                                 key="step7"
                                 initial={{ opacity: 0 }} 
@@ -220,7 +220,7 @@ export function Demonstration2() {
                     )}
                 </div>
             </div>
-            <div className="flex justify-between items-center w-screen h-[10%] px-4">
+            <div className="flex justify-between items-center w-screen h-[7%] px-4">
                 <div className="flex justify-center items-center gap-4">
                     <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/list')}}>Index</Button3D>
                     <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
