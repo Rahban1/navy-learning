@@ -19,7 +19,7 @@ export function Radar2() {
             <Button3D className="bg-green-400 text-white border-b-4 border-green-700 hover:bg-green-500" onclick={()=>{navigate('/')}}>Home</Button3D>
           </div>
         </div>
-        <div className="absolute right-[13%] top-[32%] z-2">
+        <div className="absolute right-[12%] top-[31%] z-2">
           <Button3D onclick={()=>{navigate('/map-c-ranges')}}>Clearing Ranges <br /> (NLT and NMT) </Button3D>
         </div>
         

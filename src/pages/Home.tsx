@@ -12,7 +12,7 @@ export function Home() {
             <div className="absolute text-white text-2xl font-bold leading-loose tracking-wider font-rock2 left-6 bottom-8">
                 <div className="underline">Syndicate Members :-</div>
                 <div>Lt Cdr Rishabh Hooda</div>
-                <div>Lt Cdr Anil Chaudhary</div>
+                <div>Lt Cdr Anil Choudhary</div>
                 <div>Lt Cdr Shanu Kumar</div>
                 <div>Lt Cdr Gaurav Kumar</div>
             </div>
