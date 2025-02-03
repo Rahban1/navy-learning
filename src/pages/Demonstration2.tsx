@@ -114,7 +114,7 @@ export function Demonstration2() {
                 </div>
             </div>
             <div className="flex flex-col h-[86%] w-[97%] mx-auto">
-                <div className="h-[78%]  flex justify-center items-center">
+                <div className="h-[70%]  flex justify-center items-center">
                     <video ref={video1ref} className="h-full w-full object-contain" >
                         <source src="./videos/cir.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
